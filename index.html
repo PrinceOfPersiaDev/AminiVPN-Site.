@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMINI VPN | سرویس VPN</title>
+    <title>AMINI VPN | سرویس پرسرعت</title>
 
     <style>
         * {
@@ -34,6 +34,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
         }
 
         .logo {
@@ -41,8 +42,13 @@
             font-weight: bold;
         }
 
-        .logo span {
+        .logo span,
+        .hero h1 span {
             color: #38bdf8;
+        }
+
+        .nav-text {
+            color: #94a3b8;
         }
 
         .hero {
@@ -55,10 +61,6 @@
             margin-bottom: 15px;
         }
 
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
         .hero p {
             color: #cbd5e1;
             font-size: 18px;
@@ -68,17 +70,19 @@
 
         .button {
             display: inline-block;
-            margin-top: 28px;
-            padding: 14px 30px;
+            margin-top: 20px;
+            padding: 12px 28px;
             background: #0284c7;
             color: white;
             text-decoration: none;
             border-radius: 12px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
         .button:hover {
             background: #0369a1;
+            transform: translateY(-2px);
         }
 
         .section-title {
@@ -99,33 +103,39 @@
             border-radius: 18px;
             padding: 25px;
             text-align: center;
+            transition: 0.2s;
+        }
+
+        .plan:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
         }
 
         .plan h3 {
             font-size: 22px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .price {
             color: #38bdf8;
-            font-size: 25px;
+            font-size: 24px;
             font-weight: bold;
         }
 
         .duration {
             color: #94a3b8;
-            margin-top: 5px;
+            margin-top: 4px;
         }
 
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 18px;
-            margin-top: 25px;
         }
 
         .feature {
             background: #111827;
+            border: 1px solid #1e293b;
             border-radius: 16px;
             padding: 25px;
             text-align: center;
@@ -146,6 +156,7 @@
 
         details {
             background: #111827;
+            border: 1px solid #1e293b;
             margin-bottom: 12px;
             padding: 18px;
             border-radius: 12px;
@@ -154,6 +165,11 @@
         summary {
             cursor: pointer;
             font-weight: bold;
+        }
+
+        details p {
+            color: #94a3b8;
+            margin-top: 10px;
         }
 
         footer {
@@ -165,6 +181,10 @@
         }
 
         @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+            }
+
             .hero h1 {
                 font-size: 32px;
             }
@@ -181,7 +201,7 @@
 <header>
     <div class="container nav">
         <div class="logo">💎 <span>AMINI</span> VPN</div>
-        <div>سرویس پرسرعت</div>
+        <div class="nav-text">سرویس پرسرعت</div>
     </div>
 </header>
 
@@ -202,20 +222,34 @@
 
 <section class="container">
 
-    <h2 class="section-title">💰 پلن‌های پیشنهادی</h2>
-        </a>
-    </div>
-</section>
-
-<section class="container">
-
-    <h2 class="section-title">💰 پلن‌های پیشنهادی</h2>
+    <h2 class="section-title">💰 لیست قیمت</h2>
 
     <div class="plans">
 
         <div class="plan">
+            <h3>۱۰ گیگ</h3>
+            <div class="price">۶۰,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
             <h3>۲۰ گیگ</h3>
             <div class="price">۹۲,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۳۰ گیگ</h3>
+            <div class="price">۱۳۸,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۴۰ گیگ</h3>
+            <div class="price">۱۸۴,۰۰۰ تومان</div>
             <div class="duration">۳۰ روزه</div>
             <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
         </div>
@@ -235,8 +269,15 @@
         </div>
 
         <div class="plan">
-            <h3>۱۰۰ گیگ</h3>
-            <div class="price">۴۶۰,۰۰۰ تومان</div>
+            <h3>۷۰ گیگ</h3>
+            <div class="price">۳۲۲,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۸۰ گیگ</h3>
+            <div class="price">۳۶۸,۰۰۰ تومان</div>
             <div class="duration">۳۰ روزه</div>
             <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
         </div>
@@ -245,34 +286,6 @@
 </section>
 
 <section class="container">
-
-    <h2 class="section-title">✨ چرا AMINI VPN؟</h2>
-
-    <div class="features">
-
-        <div class="feature">
-            <h3>⚡ سرعت مناسب</h3>
-            <p>مناسب برای استفاده روزمره و وب‌گردی.</p>
-        </div>
-
-        <div class="feature">
-            <h3>🛡️ پشتیبانی</h3>
-            <p>پشتیبانی برای راهنمایی و مشکلات سرویس.</p>
-        </div>
-
-        <div class="feature">
-            <h3>🤖 خرید آسان</h3>
-            <p>خرید و دریافت سرویس از طریق ربات تلگرام.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="container">
-
-    <h2 class="section-title">❓ سوالات متداول</h2>
-
-    <div class="faq">
 
     <h2 class="section-title">✨ چرا AMINI VPN؟</h2>
 
@@ -309,7 +322,7 @@
 
         <details>
             <summary>مدت سرویس چقدر است؟</summary>
-            <p>مدت هر پلن طبق توضیحات همان پلن است.</p>
+            <p>مدت هر پلن ۳۰ روزه است.</p>
         </details>
 
         <details>

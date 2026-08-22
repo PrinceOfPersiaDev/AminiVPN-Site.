@@ -3,61 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMINI VPN</title>
+    <title>AMINI VPN | سرویس VPN</title>
+
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: Tahoma, Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            text-align: center;
+            background: #0b1120;
+            color: #fff;
+            line-height: 1.8;
         }
 
         .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 80px 20px;
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
         }
 
-        h1 {
+        header {
+            padding: 22px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 15px 55px;
+        }
+
+        .hero h1 {
             font-size: 42px;
             margin-bottom: 15px;
         }
 
-        p {
-            font-size: 18px;
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
             color: #cbd5e1;
-            line-height: 2;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 28px;
             padding: 14px 30px;
-            background: #2563eb;
+            background: #0284c7;
             color: white;
             text-decoration: none;
             border-radius: 12px;
-            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #0369a1;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 45px 0 25px;
+            font-size: 30px;
+        }
+
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .plan {
+            background: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .plan h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #38bdf8;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .duration {
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .feature {
+            background: #111827;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #94a3b8;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        details {
+            background: #111827;
+            margin-bottom: 12px;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 70px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
         }
     </style>
 </head>
 
 <body>
+
+<header>
+    <div class="container nav">
+        <div class="logo">💎 <span>AMINI</span> VPN</div>
+        <div>سرویس پرسرعت</div>
+    </div>
+</header>
+
+<section class="hero">
     <div class="container">
-        <h1>💎 AMINI VPN</h1>
+        <h1>سرویس <span>AMINI VPN</span></h1>
 
         <p>
-            سرویس‌های پرسرعت و باکیفیت AMINI VPN
-        </p>
-
-        <p>
-            برای مشاهده قیمت‌ها و خرید سرویس وارد ربات تلگرام ما شوید.
+            سرویس‌های باکیفیت و پرسرعت برای استفاده روزمره،
+            با پشتیبانی و خرید آسان.
         </p>
 
         <a class="button" href="https://t.me/arkanvpnn_bot">
             🤖 ورود به ربات خرید
         </a>
     </div>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">💰 پلن‌های پیشنهادی</h2>
+
+    <div class="plans">
+
+        <div class="plan">
+            <h3>۲۰ گیگ</h3>
+            <div class="price">۹۲,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۵۰ گیگ</h3>
+            <div class="price">۲۳۰,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۶۰ گیگ</h3>
+            <div class="price">۲۷۶,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+        <div class="plan">
+            <h3>۱۰۰ گیگ</h3>
+            <div class="price">۴۶۰,۰۰۰ تومان</div>
+            <div class="duration">۳۰ روزه</div>
+            <a class="button" href="https://t.me/arkanvpnn_bot">خرید</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">✨ چرا AMINI VPN؟</h2>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>⚡ سرعت مناسب</h3>
+            <p>مناسب برای استفاده روزمره و وب‌گردی.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🛡️ پشتیبانی</h3>
+            <p>پشتیبانی برای راهنمایی و مشکلات سرویس.</p>
+        </div>
+
+        <div class="feature">
+            <h3>🤖 خرید آسان</h3>
+            <p>خرید و دریافت سرویس از طریق ربات تلگرام.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="container">
+
+    <h2 class="section-title">❓ سوالات متداول</h2>
+
+    <div class="faq">
+
+        <details>
+            <summary>چطور سرویس خریداری کنم؟</summary>
+            <p>روی دکمه خرید بزنید و وارد ربات تلگرام شوید.</p>
+        </details>
+
+        <details>
+            <summary>مدت سرویس چقدر است؟</summary>
+            <p>مدت هر پلن طبق توضیحات همان پلن است.</p>
+        </details>
+
+        <details>
+            <summary>چطور با پشتیبانی ارتباط بگیرم؟</summary>
+            <p>از طریق ربات تلگرام می‌توانید با پشتیبانی در ارتباط باشید.</p>
+        </details>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 AMINI VPN — تمامی حقوق محفوظ است.
+    </div>
+</footer>
+
 </body>
 </html>

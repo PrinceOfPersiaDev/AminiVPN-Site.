@@ -8,16 +8,16 @@
     <style>
         :root {
             --bg-main: #02050d;
-            --bg-card: rgba(7, 14, 28, 0.72);
+            --bg-card: rgba(7, 14, 28, 0.75);
             --blue: #008cff;
             --blue-light: #19c8ff;
             --blue-deep: #1455ff;
             --white: #ffffff;
             --text-main: #f5f9ff;
             --text-muted: #8b9ab3;
-            --border: rgba(75, 150, 255, 0.13);
+            --border: rgba(75, 150, 255, 0.18);
             --border-blue: rgba(25, 200, 255, 0.45);
-            --glow: 0 0 25px rgba(0, 140, 255, 0.16);
+            --glow: 0 0 25px rgba(0, 140, 255, 0.2);
         }
 
         * {
@@ -28,7 +28,7 @@
         }
 
         body {
-            background: radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.17), transparent 35%), var(--bg-main);
+            background: radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.17), transparent 40%), var(--bg-main);
             color: var(--text-main);
             line-height: 1.7;
             min-height: 100vh;
@@ -41,7 +41,7 @@
             margin: 0 auto;
         }
 
-        /* Header Alignment */
+        /* Header Layout */
         header {
             display: flex;
             justify-content: space-between;
@@ -51,7 +51,7 @@
             backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             border-radius: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             box-shadow: var(--glow);
         }
 
@@ -97,25 +97,23 @@
 
         /* Hero Banner */
         .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            position: relative;
             background: var(--bg-card);
             backdrop-filter: blur(12px);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 40px 50px;
-            min-height: 420px;
+            padding: 50px 40px;
+            min-height: 440px;
             box-shadow: var(--glow);
-            gap: 30px;
-            position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
         }
 
         .hero-content {
-            flex: 1;
-            text-align: right;
-            z-index: 3;
+            max-width: 480px;
+            z-index: 5;
+            position: relative;
         }
 
         .hero-subtitle {
@@ -146,7 +144,7 @@
             background: linear-gradient(135deg, var(--blue), var(--blue-deep));
             color: var(--white);
             border: none;
-            padding: 12px 30px;
+            padding: 12px 32px;
             border-radius: 12px;
             font-size: 15px;
             font-weight: bold;
@@ -160,66 +158,69 @@
             box-shadow: 0 0 30px rgba(25, 200, 255, 0.6);
         }
 
-        /* لایه افکت متحرک اتصالات شبکه روی کره زمین */
-        .hero-visual {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-visual img {
-            max-width: 100%;
-            max-height: 360px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 0 25px rgba(0, 140, 255, 0.4));
-            position: relative;
-            z-index: 1;
-        }
-
-        /* موج راداری و اسکن نوری شبکه */
-        .network-overlay {
+        /* Banner Background Image & Dynamic Animation Layer */
+        .hero-bg-wrapper {
             position: absolute;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, transparent 0deg, rgba(25, 200, 255, 0.25) 60deg, transparent 90deg);
-            animation: networkSweep 6s linear infinite;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .hero-bg-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.85;
+            filter: brightness(1.1);
+        }
+
+        /* انیمیشن گذر موج نوری اتصالات روی خطوط */
+        .light-sweep {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(25, 200, 255, 0.15) 50%, transparent 100%);
+            transform: skewX(-25deg);
+            animation: sweep 4s infinite ease-in-out;
             z-index: 2;
             pointer-events: none;
-            mix-blend-mode: screen;
         }
 
-        /* پالس‌های نوری نقطه اتصال */
-        .network-pulse {
+        /* انیمیشن پالس زنده در مرکز کره زمین */
+        .globe-glow {
             position: absolute;
+            right: 15%;
+            top: 30%;
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            box-shadow: 0 0 50px rgba(25, 200, 255, 0.5), inset 0 0 30px rgba(0, 140, 255, 0.3);
-            animation: pulseSignal 3s ease-in-out infinite alternate;
+            background: radial-gradient(circle, rgba(25, 200, 255, 0.3) 0%, transparent 70%);
+            animation: pulseGlow 2.5s infinite alternate ease-in-out;
             z-index: 2;
             pointer-events: none;
         }
 
-        @keyframes networkSweep {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes sweep {
+            0% { left: -100%; }
+            50% { left: 150%; }
+            100% { left: 150%; }
         }
 
-        @keyframes pulseSignal {
-            0% { opacity: 0.3; transform: scale(0.95); }
-            100% { opacity: 0.8; transform: scale(1.05); }
+        @keyframes pulseGlow {
+            0% { transform: scale(0.85); opacity: 0.4; }
+            100% { transform: scale(1.15); opacity: 0.9; }
         }
 
         @media (max-width: 850px) {
             .nav-links { display: none; }
-            .hero { flex-direction: column-reverse; text-align: center; padding: 30px 20px; }
-            .hero-content { text-align: center; }
-            .hero-visual img { max-height: 220px; }
-            .network-overlay, .network-pulse { width: 200px; height: 200px; }
+            .hero { text-align: center; justify-content: center; padding: 40px 20px; }
+            .hero-content { max-width: 100%; }
+            .hero-bg-wrapper img { opacity: 0.4; }
         }
     </style>
 </head>
@@ -243,19 +244,19 @@
             <button class="nav-btn" onclick="window.open('https://t.me/AminiVPN_bot', '_blank')">پشتیبانی تلگرام</button>
         </header>
 
-        <!-- بنر اصلی همراه با انیمیشن اتصالات نوری -->
+        <!-- بنر لایو با انیمیشن عبور جریان داده روی اتصالات کره زمین -->
         <section class="hero">
+            <div class="hero-bg-wrapper">
+                <img src="header.png.png.jfif" alt="Amini Network Live Connections">
+                <div class="light-sweep"></div>
+                <div class="globe-glow"></div>
+            </div>
+
             <div class="hero-content">
                 <div class="hero-subtitle">اتصال پایدار، سرعت بی‌نهایت</div>
                 <h1 class="hero-title">امینی <span>نتورک</span></h1>
                 <p class="hero-desc">تجربه‌ی اینترنتی متفاوت با سرورهای اختصاصی و پرسرعت</p>
                 <button class="cta-btn" onclick="window.open('https://t.me/AminiVPN_bot', '_blank')">🚀 شروع کنید</button>
-            </div>
-
-            <div class="hero-visual">
-                <img src="header.png.png" alt="Amini Network Banner">
-                <div class="network-overlay"></div>
-                <div class="network-pulse"></div>
             </div>
         </section>
     </div>

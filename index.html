@@ -83,6 +83,7 @@
             padding: 8px 17px;
             border-radius: 10px;
             font-size: 14px;
+            cursor: pointer;
         }
 
         /* Hero */
@@ -404,9 +405,9 @@
     <div class="container nav">
         <div class="logo">💎 <span>AMINI</span> VPN</div>
 
-        <a class="nav-button" href="https://t.me/AMINI_VPN">
-            💬 پشتیبانی ادمین
-        </a>
+        <button class="nav-button" onclick="openTelegram('')">
+            🤖 ربات تلگرام
+        </button>
     </div>
 </header>
 
@@ -424,7 +425,7 @@
 
         <p>
             سرویس‌های متنوع با حجم‌های مختلف،
-            خرید آسان و پشتیبانی سریع.
+            خرید آسان و مدیریت از طریق ربات.
         </p>
 
         <div class="hero-buttons">
@@ -432,9 +433,9 @@
                 💰 مشاهده قیمت‌ها
             </a>
 
-            <a class="button secondary" href="https://t.me/AMINI_VPN">
-                💬 تماس با ادمین
-            </a>
+            <button class="button secondary" onclick="openTelegram('')">
+                🤖 ورود به ربات
+            </button>
         </div>
 
         <div class="stats">
@@ -451,7 +452,7 @@
 
             <div class="stat">
                 <strong>۲۴/۷</strong>
-                <span>پشتیبانی</span>
+                <span>پاسخگویی خودکار</span>
             </div>
 
         </div>
@@ -474,7 +475,7 @@
                 <h3>۱۰ گیگ</h3>
                 <div class="price">۶۰,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۱۰ گیگ', '۶۰,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('10GB')">خرید</button>
             </div>
 
             <div class="plan popular">
@@ -483,7 +484,7 @@
                 <h3>۲۰ گیگ</h3>
                 <div class="price">۹۲,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۲۰ گیگ', '۹۲,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('20GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -491,7 +492,7 @@
                 <h3>۳۰ گیگ</h3>
                 <div class="price">۱۳۸,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۳۰ گیگ', '۱۳۸,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('30GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -499,7 +500,7 @@
                 <h3>۴۰ گیگ</h3>
                 <div class="price">۱۸۴,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۴۰ گیگ', '۱۸۴,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('40GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -507,7 +508,7 @@
                 <h3>۵۰ گیگ</h3>
                 <div class="price">۲۳۰,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۵۰ گیگ', '۲۳۰,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('50GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -515,7 +516,7 @@
                 <h3>۶۰ گیگ</h3>
                 <div class="price">۲۷۶,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۶۰ گیگ', '۲۷۶,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('60GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -523,7 +524,7 @@
                 <h3>۷۰ گیگ</h3>
                 <div class="price">۳۲۲,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۷۰ گیگ', '۳۲۲,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('70GB')">خرید</button>
             </div>
 
             <div class="plan">
@@ -531,7 +532,7 @@
                 <h3>۸۰ گیگ</h3>
                 <div class="price">۳۶۸,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="sendOrder('۸۰ گیگ', '۳۶۸,۰۰۰ تومان')">خرید</button>
+                <button class="button" onclick="openTelegram('80GB')">خرید</button>
             </div>
 
         </div>
@@ -558,18 +559,18 @@
             </div>
 
             <div class="feature">
-                <div class="feature-icon">🛡️</div>
-                <h3>پشتیبانی</h3>
+                <div class="feature-icon">🤖</div>
+                <h3>ربات تلگرام</h3>
                 <p>
-                    پشتیبانی مستقیم و پاسخگویی سریع.
+                    مدیریت حساب و خرید اتوماتیک از طریق ربات.
                 </p>
             </div>
 
             <div class="feature">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">🛒</div>
                 <h3>خرید آسان</h3>
                 <p>
-                    انتخاب پلن و ثبت سریع سفارش در تلگرام.
+                    انتخاب پلن و ثبت سریع درخواست خرید.
                 </p>
             </div>
 
@@ -598,7 +599,7 @@
             <details>
                 <summary>چطور سرویس خریداری کنم؟</summary>
                 <p>
-                    روی دکمه خرید پلن مورد نظر بزنید تا مستقیماً به پیوی ادمین متصل شوید.
+                    روی دکمه خرید بزنید و مستقیم وارد ربات تلگرام شوید.
                 </p>
             </details>
 
@@ -610,9 +611,9 @@
             </details>
 
             <details>
-                <summary>چطور با پشتیبانی ارتباط بگیرم؟</summary>
+                <summary>تحویل سرویس چقدر زمان می‌برد؟</summary>
                 <p>
-                    از طریق دکمه‌های بالای صفحه می‌توانید مستقیماً به ادمین پیام دهید.
+                    بلافاصله پس از ثبت سفارش در ربات، اطلاعات سرویس دریافت می‌شود.
                 </p>
             </details>
 
@@ -629,12 +630,12 @@
             <h2>🚀 آماده‌ای شروع کنی؟</h2>
 
             <p>
-                برای مشاهده پلن‌ها و ثبت سفارش پیام بده.
+                برای مشاهده پلن‌ها و ثبت سفارش وارد ربات AMINI VPN شو.
             </p>
 
-            <a class="button" href="https://t.me/AMINI_VPN">
-                💬 ثبت سفارش در تلگرام
-            </a>
+            <button class="button" onclick="openTelegram('')">
+                🤖 ورود به ربات تلگرام
+            </button>
 
         </div>
 
@@ -648,12 +649,19 @@
 </footer>
 
 <script>
-  function sendOrder(planTitle, price) {
-    const adminUsername = "AMINI_VPN";
-    const text = `سلام، درخواست خرید سرویس زیر را دارم:\n\n📌 پلن: ${planTitle}\n💰 قیمت: ${price}`;
-    
-    // باز کردن تلگرام با متن آماده
-    window.location.href = `https://t.me/${adminUsername}?text=${encodeURIComponent(text)}`;
+  function openTelegram(plan) {
+    const botUsername = "arkanvpnn_bot";
+    const startParam = plan ? `?start=${plan}` : "";
+    const startParamTg = plan ? `&start=${plan}` : "";
+
+    const appUrl = `tg://resolve?domain=${botUsername}${startParamTg}`;
+    const webUrl = `https://t.me/${botUsername}${startParam}`;
+
+    window.location.href = appUrl;
+
+    setTimeout(function () {
+      window.location.href = webUrl;
+    }, 1500);
   }
 </script>
 

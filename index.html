@@ -20,6 +20,7 @@
             --blue-deep: #1455ff;
             --purple: #694cff;
             --green: #10d99b;
+            --orange: #ff9800;
             --white: #ffffff;
             --text-main: #f5f9ff;
             --text-muted: #8b9ab3;
@@ -70,7 +71,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 15px;
         }
 
         .logo {
@@ -94,13 +95,18 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .nav-actions {
+            display: flex;
+            gap: 10px;
+        }
+
         .nav-btn {
             background: rgba(0, 140, 255, 0.1);
             border: 1px solid var(--border-blue);
             color: var(--white);
-            padding: 9px 20px;
+            padding: 8px 16px;
             border-radius: 12px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s ease;
@@ -172,7 +178,6 @@
             flex-wrap: wrap;
         }
 
-        /* Background Image & Live Dynamic Animation Layer */
         .hero-bg-wrapper {
             position: absolute;
             inset: 0;
@@ -228,6 +233,40 @@
             100% { transform: scale(1.15); opacity: 0.9; }
         }
 
+        /* Banner Referral Box */
+        .referral-banner {
+            background: linear-gradient(135deg, rgba(105, 76, 255, 0.2), rgba(0, 140, 255, 0.1));
+            border: 1px solid var(--purple);
+            border-radius: 18px;
+            padding: 20px 25px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .referral-text {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .referral-icon {
+            font-size: 32px;
+        }
+
+        .referral-info h4 {
+            font-size: 16px;
+            font-weight: 800;
+        }
+
+        .referral-info p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
         /* Buttons Style */
         .btn {
             display: inline-flex;
@@ -275,6 +314,11 @@
         .btn-econ:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 28px rgba(16, 217, 155, 0.45);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, var(--purple), var(--blue-deep));
+            color: var(--white);
         }
 
         /* Section & Cards */
@@ -376,6 +420,33 @@
             background: linear-gradient(135deg, #059669, var(--green)) !important;
         }
 
+        /* Help Cards Grid */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .help-card {
+            background: rgba(9, 19, 36, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .help-card h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: var(--blue-light);
+        }
+
+        .help-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
         /* FAQ Section */
         .faq-wrapper {
             max-width: 760px;
@@ -462,6 +533,8 @@
             .hero-content { max-width: 100%; }
             .hero-actions { justify-content: center; }
             .hero-bg-wrapper img { opacity: 0.35; }
+            .referral-banner { text-align: center; justify-content: center; }
+            .referral-text { flex-direction: column; }
         }
     </style>
 </head>
@@ -474,7 +547,10 @@
                 <img src="logo.png" alt="AMINI NETWORK">
                 <span>AMINI NETWORK</span>
             </div>
-            <button class="nav-btn" onclick="openTelegram('')">پشتیبانی تلگرام</button>
+            <div class="nav-actions">
+                <button class="nav-btn" onclick="openTelegram('charge')">💳 افزایش موجودی</button>
+                <button class="nav-btn" onclick="openTelegram('')">📞 پشتیبانی</button>
+            </div>
         </div>
     </header>
 
@@ -494,10 +570,22 @@
                 <div class="hero-actions">
                     <a href="#software" class="btn btn-primary">خدمات نرم‌افزار</a>
                     <a href="#vpn" class="btn btn-secondary">پلن‌های VPN</a>
-                    <a href="#dedicated" class="btn btn-secondary">سرویس اختصاصی</a>
+                    <a href="#guide" class="btn btn-secondary">راهنمای اتصال</a>
                 </div>
             </div>
         </section>
+
+        <!-- Referral Banner (🎁 دعوت از دوستان) -->
+        <div class="referral-banner">
+            <div class="referral-text">
+                <div class="referral-icon">🎁</div>
+                <div class="referral-info">
+                    <h4>دعوت از دوستان (۵ گیگابایت حجم رایگان)</h4>
+                    <p>با دعوت دوستان خود به ربات، به‌ازای هر معرفی ۵ گیگابایت اشتراک رایگان هدیه بگیرید.</p>
+                </div>
+            </div>
+            <button class="btn btn-purple" onclick="openTelegram('invite')">دریافت لینک دعوت</button>
+        </div>
 
         <!-- Section 1: Software Services -->
         <section id="software">
@@ -738,6 +826,37 @@
             </div>
         </section>
 
+        <!-- Section 4: Connection Guide (ℹ️ راهنمای اتصال) -->
+        <section id="guide">
+            <div class="section-header">
+                <h2>ℹ️ راهنمای اتصال و دانلود نرم‌افزارها</h2>
+                <p>برنامه‌های موردنیاز برای سیستم‌عامل‌های مختلف</p>
+            </div>
+
+            <div class="help-grid">
+                <div class="help-card">
+                    <h4>🤖 اندروید</h4>
+                    <p>استفاده از برنامه‌های v2rayNG یا MahsaNG</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_android')">آموزش اندروید</button>
+                </div>
+                <div class="help-card">
+                    <h4>🍎 آیفون (iOS)</h4>
+                    <p>استفاده از برنامه‌های Streisand یا V2Box</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_ios')">آموزش آیفون</button>
+                </div>
+                <div class="help-card">
+                    <h4>💻 ویندوز</h4>
+                    <p>استفاده از نرم‌افزار v2rayN یا v2rayN-PRO</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_windows')">آموزش ویندوز</button>
+                </div>
+                <div class="help-card">
+                    <h4>🍏 مک‌بوک</h4>
+                    <p>استفاده از نرم‌افزارهای V2Box یا Sing-Box</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_mac')">آموزش مک</button>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section>
             <div class="section-header">
@@ -752,7 +871,7 @@
                 </details>
                 <details>
                     <summary>سرویس‌های نرم‌افزاری چقدر زمان می‌برند؟</summary>
-                    <p>اغلب سرویس‌ها مانند FRP به دلیل پردازش فوری، بین ۱۰ الی ۳0 دقیقه زمان نیاز خواهند داشت.</p>
+                    <p>اغلب سرویس‌ها مانند FRP به دلیل پردازش فوری، بین ۱۰ الی ۳۰ دقیقه زمان نیاز خواهند داشت.</p>
                 </details>
                 <details>
                     <summary>آیا سرویس‌های اختصاصی و VPN ضمانت دارند؟</summary>
@@ -765,7 +884,7 @@
         <section>
             <div class="cta-box">
                 <h2>نیاز به مشاوره یا ثبت سفارش دارید؟</h2>
-                <p>از طریق ربات هوشمند تلگرام می‌توانید کلیه سرویس‌ها را مدیریت و خریداری کنید.</p>
+                <p>از طریق ربات هوشمند تلگرام می‌توانید کلیه سرویس‌ها را مدیریت، شارژ و خریداری کنید.</p>
                 <button class="btn btn-primary" onclick="openTelegram('')">ورود به ربات تلگرام</button>
             </div>
         </section>

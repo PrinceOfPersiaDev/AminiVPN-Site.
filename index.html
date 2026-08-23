@@ -667,3 +667,203 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMINI NETWORK | خدمات VPN و نرم‌افزار</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 20px 10px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #38bdf8;
+            margin: 40px 0 20px 0;
+            font-size: 20px;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 10px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            color: #f1f5f9;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+
+        .btn {
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>AMINI NETWORK 🚀✨</h1>
+            <p>ارائه‌دهنده خدمات تخصصی اینترنت و نرم‌افزار موبایل</p>
+        </header>
+
+        <!-- ۱. بخش پلن‌های VPN -->
+        <h2 class="section-title">🛍️ اشتراک‌های AMINI VPN</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>اشتراک ۱۰ گیگ</h3>
+                <p>اتصال پرسرعت و پایدار</p>
+                <button class="btn" onclick="openTelegram('10GB')">خرید پلن</button>
+            </div>
+            <div class="card">
+                <h3>اشتراک ۲۰ گیگ</h3>
+                <p>مناسب استفاده روزمره</p>
+                <button class="btn" onclick="openTelegram('20GB')">خرید پلن</button>
+            </div>
+            <div class="card">
+                <h3>اشتراک ۳0 گیگ</h3>
+                <p>حجم اقتصادی و محبوب</p>
+                <button class="btn" onclick="openTelegram('30GB')">خرید پلن</button>
+            </div>
+            <div class="card">
+                <h3>اشتراک ۵۰ گیگ</h3>
+                <p>ویژه کاربران پرمصرف</p>
+                <button class="btn" onclick="openTelegram('50GB')">خرید پلن</button>
+            </div>
+        </div>
+
+        <!-- ۲. بخش خدمات نرم‌افزار -->
+        <h2 class="section-title">🌐 خدمات تخصصی نرم‌افزار موبایل</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>🔓 سرور FRP با کابل</h3>
+                <p>رفع و حذف FRP مستقیم با کابل</p>
+                <button class="btn" onclick="openSoftwareService('FRP_Cable')">ثبت سفارش</button>
+            </div>
+            <div class="card">
+                <h3>📡 سرور FRP با IMEI</h3>
+                <p>حذف آنلاین بدون نیاز به کابل</p>
+                <button class="btn" onclick="openSoftwareService('FRP_IMEI')">ثبت سفارش</button>
+            </div>
+            <div class="card">
+                <h3>📱 شیائومی اکانت (Mi Account)</h3>
+                <p>حذف رسمی قفل Mi Account</p>
+                <button class="btn" onclick="openSoftwareService('Mi_Account')">ثبت سفارش</button>
+            </div>
+            <div class="card">
+                <h3>⚡ سرور FRP شیائومی</h3>
+                <p>رفع قفل FRP اختصاصی شیائومی</p>
+                <button class="btn" onclick="openSoftwareService('FRP_Xiaomi')">ثبت سفارش</button>
+            </div>
+            <div class="card">
+                <h3>📜 اشتراک باکس و دانگل</h3>
+                <p>فروش لایسنس رسمی ابزارها</p>
+                <button class="btn" onclick="openSoftwareService('Box_License')">ثبت سفارش</button>
+            </div>
+            <div class="card">
+                <h3>💳 خرید کردیت (Credit)</h3>
+                <p>تامین اعتبار برنامه‌ها و ابزارها</p>
+                <button class="btn" onclick="openSoftwareService('Credit')">ثبت سفارش</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const BOT_USERNAME = "AMINI_VPN";
+
+        // ارسال درخواست پلن‌های VPN
+        function openTelegram(plan) {
+            const tgUrl = `tg://resolve?domain=${BOT_USERNAME}&start=${plan}`;
+            const webUrl = `https://t.me/${BOT_USERNAME}?start=${plan}`;
+
+            window.location.href = tgUrl;
+            setTimeout(() => {
+                window.location.href = webUrl;
+            }, 1500);
+        }
+
+        // ارسال درخواست خدمات نرم‌افزاری
+        function openSoftwareService(serviceType) {
+            const tgUrl = `tg://resolve?domain=${BOT_USERNAME}&start=srv_${serviceType}`;
+            const webUrl = `https://t.me/${BOT_USERNAME}?start=srv_${serviceType}`;
+
+            window.location.href = tgUrl;
+            setTimeout(() => {
+                window.location.href = webUrl;
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>

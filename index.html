@@ -157,6 +157,7 @@
             box-shadow: 0 0 30px rgba(25, 200, 255, 0.6);
         }
 
+        /* Animated Globe Image */
         .hero-visual {
             flex: 1;
             display: flex;
@@ -169,7 +170,23 @@
             max-height: 350px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 0 25px rgba(0, 140, 255, 0.4));
+            /* انیمیشن چرخش ۳۶۰ درجه + پالس نور */
+            animation: rotateGlobe 20s linear infinite, pulseGlow 3s ease-in-out infinite alternate;
+        }
+
+        /* تعریف انیمیشن‌ها */
+        @keyframes rotateGlobe {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseGlow {
+            from {
+                filter: drop-shadow(0 0 20px rgba(0, 140, 255, 0.4)) scale(0.98);
+            }
+            to {
+                filter: drop-shadow(0 0 45px rgba(25, 200, 255, 0.85)) scale(1.02);
+            }
         }
 
         @media (max-width: 850px) {
@@ -200,7 +217,7 @@
             <button class="nav-btn" onclick="window.open('https://t.me/AminiVPN_bot', '_blank')">پشتیبانی تلگرام</button>
         </header>
 
-        <!-- بنر اصلی با عکس header.png.png -->
+        <!-- بنر اصلی با تصویر متحرک -->
         <section class="hero">
             <div class="hero-content">
                 <div class="hero-subtitle">اتصال پایدار، سرعت بی‌نهایت</div>

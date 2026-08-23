@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AMINI VPN | خرید سرویس پرسرعت</title>
-    <meta name="description" content="AMINI VPN - خرید آسان سرویس‌های VPN با حجم‌های مختلف و پشتیبانی سریع.">
+    <title>AMINI NETWORK | خدمات تخصصی نرم‌افزار و VPN</title>
+    <meta name="description" content="AMINI NETWORK - ارائه خدمات تخصصی نرم‌افزار موبایل، حذف FRP، اکانت شیائومی و سرویس‌های پرسرعت VPN.">
 
     <style>
         * {
@@ -30,7 +29,7 @@
         }
 
         body {
-            font-family: Tahoma, Arial, sans-serif;
+            font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
             background:
                 radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.18), transparent 35%),
                 var(--bg);
@@ -50,7 +49,6 @@
         }
 
         /* Header */
-
         header {
             position: sticky;
             top: 0;
@@ -84,14 +82,18 @@
             border-radius: 10px;
             font-size: 14px;
             cursor: pointer;
+            transition: 0.25s;
         }
 
-        /* Hero */
+        .nav-button:hover {
+            background: rgba(8, 169, 255, 0.2);
+        }
 
+        /* Hero Section */
         .hero {
             position: relative;
             text-align: center;
-            padding: 100px 15px 80px;
+            padding: 80px 15px 60px;
         }
 
         .badge {
@@ -106,7 +108,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(38px, 7vw, 68px);
+            font-size: clamp(32px, 6vw, 56px);
             line-height: 1.2;
             margin-bottom: 20px;
         }
@@ -157,38 +159,9 @@
             box-shadow: none;
         }
 
-        /* Stats */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .stat {
-            background: rgba(11, 20, 38, 0.7);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .stat strong {
-            display: block;
-            color: #7dd3fc;
-            font-size: 24px;
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* Sections */
-
+        /* Sections & Heading */
         section {
-            padding: 35px 0;
+            padding: 40px 0;
         }
 
         .section-heading {
@@ -197,38 +170,38 @@
         }
 
         .section-heading h2 {
-            font-size: 32px;
+            font-size: 30px;
             margin-bottom: 8px;
+            color: var(--text);
         }
 
         .section-heading p {
             color: var(--muted);
         }
 
-        /* Plans */
-
-        .plans {
+        /* Cards Grid Layout */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 18px;
         }
 
-        .plan {
+        .card {
             position: relative;
             background: linear-gradient(180deg, var(--card2), var(--card));
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 26px;
+            padding: 24px;
             text-align: center;
             transition: 0.25s;
         }
 
-        .plan:hover {
+        .card:hover {
             transform: translateY(-6px);
             border-color: rgba(8, 169, 255, 0.5);
         }
 
-        .plan.popular {
+        .card.popular {
             border-color: rgba(8, 169, 255, 0.7);
             box-shadow: 0 0 35px rgba(8, 169, 255, 0.08);
         }
@@ -245,37 +218,43 @@
             font-weight: bold;
         }
 
-        .plan-icon {
-            font-size: 32px;
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 20px;
             margin-bottom: 8px;
         }
 
-        .plan h3 {
-            font-size: 22px;
-            margin-bottom: 7px;
+        .card p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
         .price {
             color: #38bdf8;
-            font-size: 25px;
+            font-size: 24px;
             font-weight: bold;
         }
 
         .duration {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
-        .plan .button {
+        .card .button {
             width: 100%;
-            margin-top: 18px;
+            margin-top: 10px;
         }
 
         /* Features */
-
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 18px;
         }
 
@@ -283,7 +262,7 @@
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 18px;
-            padding: 27px;
+            padding: 25px;
             text-align: center;
         }
 
@@ -298,11 +277,10 @@
 
         .feature p {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* FAQ */
-
         .faq {
             max-width: 800px;
             margin: auto;
@@ -328,9 +306,8 @@
         }
 
         /* CTA */
-
         .cta {
-            margin-top: 45px;
+            margin-top: 30px;
             padding: 45px 25px;
             text-align: center;
             border-radius: 25px;
@@ -341,18 +318,18 @@
         }
 
         .cta h2 {
-            font-size: 30px;
+            font-size: 28px;
             margin-bottom: 8px;
         }
 
         .cta p {
             color: var(--muted);
+            margin-bottom: 20px;
         }
 
         /* Footer */
-
         footer {
-            margin-top: 70px;
+            margin-top: 60px;
             padding: 30px 0;
             border-top: 1px solid var(--border);
             text-align: center;
@@ -360,40 +337,18 @@
             font-size: 13px;
         }
 
-        /* Mobile */
-
+        /* Mobile Responsive */
         @media (max-width: 650px) {
-            .nav {
-                min-height: 65px;
-            }
-
-            .nav-button {
-                padding: 7px 12px;
-                font-size: 12px;
-            }
-
-            .hero {
-                padding: 70px 10px 50px;
+            .hero h1 {
+                font-size: 32px;
             }
 
             .hero p {
                 font-size: 15px;
             }
 
-            .stats {
+            .grid {
                 grid-template-columns: 1fr;
-            }
-
-            .section-heading h2 {
-                font-size: 27px;
-            }
-
-            .plans {
-                grid-template-columns: 1fr;
-            }
-
-            .plan {
-                padding: 24px;
             }
         }
     </style>
@@ -403,8 +358,7 @@
 
 <header>
     <div class="container nav">
-        <div class="logo">💎 <span>AMINI</span> VPN</div>
-
+        <div class="logo">💎 <span>AMINI</span> NETWORK</div>
         <button class="nav-button" onclick="openTelegram('')">
             🤖 ربات تلگرام
         </button>
@@ -413,457 +367,239 @@
 
 <section class="hero">
     <div class="container">
-
-        <div class="badge">
-            ⚡ سرویس سریع و مطمئن
-        </div>
-
-        <h1>
-            اینترنت بهتر با
-            <span>AMINI VPN</span>
-        </h1>
-
-        <p>
-            سرویس‌های متنوع با حجم‌های مختلف،
-            خرید آسان و مدیریت از طریق ربات.
-        </p>
+        <div class="badge">⚡ مرجع خدمات تخصصی اینترنت و نرم‌افزار</div>
+        <h1>خدمات تخصصی <span>AMINI NETWORK</span></h1>
+        <p>ارائه‌دهنده سرویس‌های آنلاین نرم‌افزار موبایل و اشتراک‌های پرسرعت اینترنت</p>
 
         <div class="hero-buttons">
-            <a class="button" href="#plans">
-                💰 مشاهده قیمت‌ها
-            </a>
-
-            <button class="button secondary" onclick="openTelegram('')">
-                🤖 ورود به ربات
-            </button>
+            <a class="button" href="#software">🌐 خدمات نرم‌افزار</a>
+            <a class="button secondary" href="#vpn">🛍️ پلن‌های VPN</a>
         </div>
-
-        <div class="stats">
-
-            <div class="stat">
-                <strong>۳۰ روز</strong>
-                <span>مدت سرویس</span>
-            </div>
-
-            <div class="stat">
-                <strong>۸ پلن</strong>
-                <span>حجم‌های متنوع</span>
-            </div>
-
-            <div class="stat">
-                <strong>۲۴/۷</strong>
-                <span>پاسخگویی خودکار</span>
-            </div>
-
-        </div>
-
     </div>
 </section>
 
-<section id="plans">
+<!-- ۱. بخش خدمات تخصصی نرم‌افزار موبایل (در اولویت اول) -->
+<section id="software">
     <div class="container">
-
         <div class="section-heading">
-            <h2>💰 لیست قیمت</h2>
-            <p>پلن مناسب خودت رو انتخاب کن</p>
+            <h2>🌐 خدمات تخصصی نرم‌افزار موبایل</h2>
+            <p>ثبت سفارش آنلاین انواع لایسنس، FRP و اکانت تخصصی</p>
         </div>
 
-        <div class="plans">
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🔓</div>
+                <h3>سرور FRP با کابل</h3>
+                <p>رفع و حذف FRP مستقیم با کابل</p>
+                <button class="button" onclick="openTelegram('srv_FRP_Cable')">ثبت سفارش</button>
+            </div>
 
-            <div class="plan">
-                <div class="plan-icon">🔹</div>
+            <div class="card">
+                <div class="card-icon">📡</div>
+                <h3>سرور FRP با IMEI</h3>
+                <p>حذف آنلاین بدون نیاز به کابل</p>
+                <button class="button" onclick="openTelegram('srv_FRP_IMEI')">ثبت سفارش</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3>شیائومی اکانت (Mi Account)</h3>
+                <p>حذف رسمی قفل Mi Account</p>
+                <button class="button" onclick="openTelegram('srv_Mi_Account')">ثبت سفارش</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>سرور FRP شیائومی</h3>
+                <p>رفع قفل FRP اختصاصی شیائومی</p>
+                <button class="button" onclick="openTelegram('srv_FRP_Xiaomi')">ثبت سفارش</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📜</div>
+                <h3>اشتراک باکس و دانگل</h3>
+                <p>فروش لایسنس رسمی ابزارها</p>
+                <button class="button" onclick="openTelegram('srv_Box_License')">ثبت سفارش</button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💳</div>
+                <h3>خرید کردیت (Credit)</h3>
+                <p>تامین اعتبار برنامه‌ها و ابزارها</p>
+                <button class="button" onclick="openTelegram('srv_Credit')">ثبت سفارش</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ۲. بخش پلن‌های VPN -->
+<section id="vpn">
+    <div class="container">
+        <div class="section-heading">
+            <h2>🛍️ اشتراک‌های AMINI VPN</h2>
+            <p>سرویس‌های ۳۰ روزه با حجم‌های متنوع و تحویل آنی</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🔹</div>
                 <h3>۱۰ گیگ</h3>
                 <div class="price">۶۰,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('10GB')">خرید</button>
+                <button class="button" onclick="openTelegram('10GB')">خرید پلن</button>
             </div>
 
-            <div class="plan popular">
+            <div class="card popular">
                 <div class="popular-label">پیشنهاد ویژه</div>
-                <div class="plan-icon">🔥</div>
+                <div class="card-icon">🔥</div>
                 <h3>۲۰ گیگ</h3>
                 <div class="price">۹۲,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('20GB')">خرید</button>
+                <button class="button" onclick="openTelegram('20GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">🔹</div>
+            <div class="card">
+                <div class="card-icon">🔹</div>
                 <h3>۳۰ گیگ</h3>
                 <div class="price">۱۳۸,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('30GB')">خرید</button>
+                <button class="button" onclick="openTelegram('30GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">🔹</div>
+            <div class="card">
+                <div class="card-icon">🔹</div>
                 <h3>۴۰ گیگ</h3>
                 <div class="price">۱۸۴,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('40GB')">خرید</button>
+                <button class="button" onclick="openTelegram('40GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">⭐</div>
+            <div class="card">
+                <div class="card-icon">⭐</div>
                 <h3>۵۰ گیگ</h3>
                 <div class="price">۲۳۰,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('50GB')">خرید</button>
+                <button class="button" onclick="openTelegram('50GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">🚀</div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
                 <h3>۶۰ گیگ</h3>
                 <div class="price">۲۷۶,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('60GB')">خرید</button>
+                <button class="button" onclick="openTelegram('60GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">💎</div>
+            <div class="card">
+                <div class="card-icon">💎</div>
                 <h3>۷۰ گیگ</h3>
                 <div class="price">۳۲۲,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('70GB')">خرید</button>
+                <button class="button" onclick="openTelegram('70GB')">خرید پلن</button>
             </div>
 
-            <div class="plan">
-                <div class="plan-icon">👑</div>
+            <div class="card">
+                <div class="card-icon">👑</div>
                 <h3>۸۰ گیگ</h3>
                 <div class="price">۳۶۸,۰۰۰ تومان</div>
                 <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('80GB')">خرید</button>
+                <button class="button" onclick="openTelegram('80GB')">خرید پلن</button>
             </div>
-
         </div>
-
     </div>
 </section>
 
+<!-- بخش ویژگی‌ها -->
 <section>
     <div class="container">
-
         <div class="section-heading">
-            <h2>✨ چرا AMINI VPN؟</h2>
-            <p>چند دلیل برای انتخاب سرویس ما</p>
+            <h2>✨ چرا AMINI NETWORK؟</h2>
+            <p>مزایای استفاده از خدمات مجموعه ما</p>
         </div>
 
         <div class="features">
-
             <div class="feature">
                 <div class="feature-icon">⚡</div>
-                <h3>سرعت مناسب</h3>
-                <p>
-                    مناسب برای وب‌گردی و استفاده روزمره.
-                </p>
+                <h3>سرعت و پایداری</h3>
+                <p>کیفیت بالای سرویس‌های شبکه و سرورهای اختصاصی.</p>
             </div>
-
             <div class="feature">
                 <div class="feature-icon">🤖</div>
-                <h3>ربات تلگرام</h3>
-                <p>
-                    مدیریت حساب و خرید اتوماتیک از طریق ربات.
-                </p>
+                <h3>ربات اتوماتیک</h3>
+                <p>مدیریت، ثبت سفارش و دریافت سریع کدها از طریق ربات تلگرام.</p>
             </div>
-
             <div class="feature">
                 <div class="feature-icon">🛒</div>
                 <h3>خرید آسان</h3>
-                <p>
-                    انتخاب پلن و ثبت سریع درخواست خرید.
-                </p>
+                <p>رابط کاربری ساده و امکان ثبت سفارش تنها با یک کلیک.</p>
             </div>
-
             <div class="feature">
                 <div class="feature-icon">📦</div>
-                <h3>پلن‌های متنوع</h3>
-                <p>
-                    حجم‌های مختلف برای نیازهای متفاوت.
-                </p>
+                <h3>تنوع خدمات</h3>
+                <p>پوشش جامع ابزارهای نرم‌افزاری و پلن‌های متنوع اینترنت.</p>
             </div>
-
         </div>
     </div>
 </section>
 
+<!-- سوالات متداول -->
 <section>
     <div class="container">
-
         <div class="section-heading">
             <h2>❓ سوالات متداول</h2>
-            <p>پاسخ چند سؤال رایج</p>
+            <p>پاسخ به سوالات رایج شما</p>
         </div>
 
         <div class="faq">
-
             <details>
-                <summary>چطور سرویس خریداری کنم؟</summary>
-                <p>
-                    روی دکمه خرید بزنید و مستقیم وارد ربات تلگرام شوید.
-                </p>
+                <summary>چگونه سفارش خود را ثبت کنم؟</summary>
+                <p>کافیست روی دکمه ثبت سفارش یا خرید پلن کلیک کنید تا به صورت مستقیم وارد ربات تلگرام شوید و سفارش شما پردازش شود.</p>
             </details>
-
             <details>
-                <summary>مدت سرویس‌ها چقدر است؟</summary>
-                <p>
-                    مدت پلن‌های نمایش داده‌شده در حال حاضر ۳۰ روزه است.
-                </p>
+                <summary>مدت اعتبار اشتراک‌های VPN چقدر است؟</summary>
+                <p>تمامی پلن‌های ارائه‌شده در حال حاضر دارای اعتبار ۳۰ روزه هستند.</p>
             </details>
-
             <details>
-                <summary>تحویل سرویس چقدر زمان می‌برد؟</summary>
-                <p>
-                    بلافاصله پس از ثبت سفارش در ربات، اطلاعات سرویس دریافت می‌شود.
-                </p>
+                <summary>تحویل خدمات نرم‌افزاری چقدر زمان می‌برد؟</summary>
+                <p>سفارشات نرم‌افزاری و لایسنس‌ها پس از ارسال اطلاعات در ربات، در سریع‌ترین زمان ممکن پردازش و فعال می‌شوند.</p>
             </details>
-
         </div>
-
     </div>
 </section>
 
+<!-- دکمه پایانی -->
 <section>
     <div class="container">
-
         <div class="cta">
-
-            <h2>🚀 آماده‌ای شروع کنی؟</h2>
-
-            <p>
-                برای مشاهده پلن‌ها و ثبت سفارش وارد ربات AMINI VPN شو.
-            </p>
-
-            <button class="button" onclick="openTelegram('')">
-                🤖 ورود به ربات تلگرام
-            </button>
-
+            <h2>🚀 آماده شروع هستید؟</h2>
+            <p>برای ثبت سریع سفارش و مدیریت حساب وارد ربات تلگرام شوید.</p>
+            <button class="button" onclick="openTelegram('')">🤖 ورود به ربات تلگرام</button>
         </div>
-
     </div>
 </section>
 
 <footer>
     <div class="container">
-        © 2026 AMINI VPN — تمامی حقوق محفوظ است.
+        © 2026 AMINI NETWORK — تمامی حقوق محفوظ است.
     </div>
 </footer>
 
 <script>
-  function openTelegram(plan) {
-    const botUsername = "arkanvpnn_bot";
-    const startParam = plan ? `?start=${plan}` : "";
-    const startParamTg = plan ? `&start=${plan}` : "";
+    function openTelegram(param) {
+        const botUsername = "arkanvpnn_bot";
+        const startParam = param ? `?start=${param}` : "";
+        const startParamTg = param ? `&start=${param}` : "";
 
-    const appUrl = `tg://resolve?domain=${botUsername}${startParamTg}`;
-    const webUrl = `https://t.me/${botUsername}${startParam}`;
+        const appUrl = `tg://resolve?domain=${botUsername}${startParamTg}`;
+        const webUrl = `https://t.me/${botUsername}${startParam}`;
 
-    window.location.href = appUrl;
+        window.location.href = appUrl;
 
-    setTimeout(function () {
-      window.location.href = webUrl;
-    }, 1500);
-  }
+        setTimeout(function () {
+            window.location.href = webUrl;
+        }, 1500);
+    }
 </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMINI NETWORK | خدمات VPN و نرم‌افزار</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tahoma', 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            padding: 20px 10px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            color: #38bdf8;
-            font-size: 26px;
-            margin-bottom: 8px;
-        }
-
-        header p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        .section-title {
-            text-align: center;
-            color: #38bdf8;
-            margin: 40px 0 20px 0;
-            font-size: 20px;
-            border-bottom: 2px solid #1e293b;
-            padding-bottom: 10px;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
-        }
-
-        .card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: #38bdf8;
-        }
-
-        .card h3 {
-            color: #f1f5f9;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 12px;
-            margin-bottom: 16px;
-        }
-
-        .btn {
-            background: #0284c7;
-            color: #ffffff;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background: #0369a1;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        
-        <header>
-            <h1>AMINI NETWORK 🚀✨</h1>
-            <p>ارائه‌دهنده خدمات تخصصی اینترنت و نرم‌افزار موبایل</p>
-        </header>
-
-        <!-- ۱. بخش پلن‌های VPN -->
-        <h2 class="section-title">🛍️ اشتراک‌های AMINI VPN</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>اشتراک ۱۰ گیگ</h3>
-                <p>اتصال پرسرعت و پایدار</p>
-                <button class="btn" onclick="openTelegram('10GB')">خرید پلن</button>
-            </div>
-            <div class="card">
-                <h3>اشتراک ۲۰ گیگ</h3>
-                <p>مناسب استفاده روزمره</p>
-                <button class="btn" onclick="openTelegram('20GB')">خرید پلن</button>
-            </div>
-            <div class="card">
-                <h3>اشتراک ۳0 گیگ</h3>
-                <p>حجم اقتصادی و محبوب</p>
-                <button class="btn" onclick="openTelegram('30GB')">خرید پلن</button>
-            </div>
-            <div class="card">
-                <h3>اشتراک ۵۰ گیگ</h3>
-                <p>ویژه کاربران پرمصرف</p>
-                <button class="btn" onclick="openTelegram('50GB')">خرید پلن</button>
-            </div>
-        </div>
-
-        <!-- ۲. بخش خدمات نرم‌افزار -->
-        <h2 class="section-title">🌐 خدمات تخصصی نرم‌افزار موبایل</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>🔓 سرور FRP با کابل</h3>
-                <p>رفع و حذف FRP مستقیم با کابل</p>
-                <button class="btn" onclick="openSoftwareService('FRP_Cable')">ثبت سفارش</button>
-            </div>
-            <div class="card">
-                <h3>📡 سرور FRP با IMEI</h3>
-                <p>حذف آنلاین بدون نیاز به کابل</p>
-                <button class="btn" onclick="openSoftwareService('FRP_IMEI')">ثبت سفارش</button>
-            </div>
-            <div class="card">
-                <h3>📱 شیائومی اکانت (Mi Account)</h3>
-                <p>حذف رسمی قفل Mi Account</p>
-                <button class="btn" onclick="openSoftwareService('Mi_Account')">ثبت سفارش</button>
-            </div>
-            <div class="card">
-                <h3>⚡ سرور FRP شیائومی</h3>
-                <p>رفع قفل FRP اختصاصی شیائومی</p>
-                <button class="btn" onclick="openSoftwareService('FRP_Xiaomi')">ثبت سفارش</button>
-            </div>
-            <div class="card">
-                <h3>📜 اشتراک باکس و دانگل</h3>
-                <p>فروش لایسنس رسمی ابزارها</p>
-                <button class="btn" onclick="openSoftwareService('Box_License')">ثبت سفارش</button>
-            </div>
-            <div class="card">
-                <h3>💳 خرید کردیت (Credit)</h3>
-                <p>تامین اعتبار برنامه‌ها و ابزارها</p>
-                <button class="btn" onclick="openSoftwareService('Credit')">ثبت سفارش</button>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        const BOT_USERNAME = "AMINI_VPN";
-
-        // ارسال درخواست پلن‌های VPN
-        function openTelegram(plan) {
-            const tgUrl = `tg://resolve?domain=${BOT_USERNAME}&start=${plan}`;
-            const webUrl = `https://t.me/${BOT_USERNAME}?start=${plan}`;
-
-            window.location.href = tgUrl;
-            setTimeout(() => {
-                window.location.href = webUrl;
-            }, 1500);
-        }
-
-        // ارسال درخواست خدمات نرم‌افزاری
-        function openSoftwareService(serviceType) {
-            const tgUrl = `tg://resolve?domain=${BOT_USERNAME}&start=srv_${serviceType}`;
-            const webUrl = `https://t.me/${BOT_USERNAME}?start=srv_${serviceType}`;
-
-            window.location.href = tgUrl;
-            setTimeout(() => {
-                window.location.href = webUrl;
-            }, 1500);
-        }
-    </script>
 
 </body>
 </html>

@@ -105,14 +105,17 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 40px 50px;
-            min-height: 400px;
+            min-height: 420px;
             box-shadow: var(--glow);
             gap: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
             flex: 1;
             text-align: right;
+            z-index: 3;
         }
 
         .hero-subtitle {
@@ -157,36 +160,58 @@
             box-shadow: 0 0 30px rgba(25, 200, 255, 0.6);
         }
 
-        /* Animated Globe Image */
+        /* لایه افکت متحرک اتصالات شبکه روی کره زمین */
         .hero-visual {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .hero-visual img {
             max-width: 100%;
-            max-height: 350px;
+            max-height: 360px;
             width: auto;
             object-fit: contain;
-            /* انیمیشن چرخش ۳۶۰ درجه + پالس نور */
-            animation: rotateGlobe 20s linear infinite, pulseGlow 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 25px rgba(0, 140, 255, 0.4));
+            position: relative;
+            z-index: 1;
         }
 
-        /* تعریف انیمیشن‌ها */
-        @keyframes rotateGlobe {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        /* موج راداری و اسکن نوری شبکه */
+        .network-overlay {
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(25, 200, 255, 0.25) 60deg, transparent 90deg);
+            animation: networkSweep 6s linear infinite;
+            z-index: 2;
+            pointer-events: none;
+            mix-blend-mode: screen;
         }
 
-        @keyframes pulseGlow {
-            from {
-                filter: drop-shadow(0 0 20px rgba(0, 140, 255, 0.4)) scale(0.98);
-            }
-            to {
-                filter: drop-shadow(0 0 45px rgba(25, 200, 255, 0.85)) scale(1.02);
-            }
+        /* پالس‌های نوری نقطه اتصال */
+        .network-pulse {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 0 50px rgba(25, 200, 255, 0.5), inset 0 0 30px rgba(0, 140, 255, 0.3);
+            animation: pulseSignal 3s ease-in-out infinite alternate;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes networkSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseSignal {
+            0% { opacity: 0.3; transform: scale(0.95); }
+            100% { opacity: 0.8; transform: scale(1.05); }
         }
 
         @media (max-width: 850px) {
@@ -194,6 +219,7 @@
             .hero { flex-direction: column-reverse; text-align: center; padding: 30px 20px; }
             .hero-content { text-align: center; }
             .hero-visual img { max-height: 220px; }
+            .network-overlay, .network-pulse { width: 200px; height: 200px; }
         }
     </style>
 </head>
@@ -217,7 +243,7 @@
             <button class="nav-btn" onclick="window.open('https://t.me/AminiVPN_bot', '_blank')">پشتیبانی تلگرام</button>
         </header>
 
-        <!-- بنر اصلی با تصویر متحرک -->
+        <!-- بنر اصلی همراه با انیمیشن اتصالات نوری -->
         <section class="hero">
             <div class="hero-content">
                 <div class="hero-subtitle">اتصال پایدار، سرعت بی‌نهایت</div>
@@ -228,6 +254,8 @@
 
             <div class="hero-visual">
                 <img src="header.png.png" alt="Amini Network Banner">
+                <div class="network-overlay"></div>
+                <div class="network-pulse"></div>
             </div>
         </section>
     </div>

@@ -25,7 +25,8 @@
             --text-muted: #8b9ab3;
             --border: rgba(75, 150, 255, 0.18);
             --border-blue: rgba(25, 200, 255, 0.45);
-            --glow: 0 0 25px rgba(0, 140, 255, 0.2);
+            --glow: 0 0 25px rgba(0, 140, 255, 0.25);
+            --glow-strong: 0 0 35px rgba(25, 200, 255, 0.5);
         }
 
         * {
@@ -36,12 +37,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            background: radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.17), transparent 40%), var(--bg-main);
+            background: radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.2), transparent 45%), var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -61,8 +60,8 @@
             background: rgba(2, 5, 13, 0.92);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(40, 150, 255, 0.15);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(40, 150, 255, 0.25);
+            box-shadow: 0 10px 30px rgba(0, 140, 255, 0.15);
         }
 
         .nav {
@@ -82,16 +81,17 @@
         }
 
         .logo img {
-            height: 36px;
+            height: 38px;
             width: auto;
             display: block;
-            filter: drop-shadow(0 0 10px rgba(0, 170, 255, 0.5));
+            filter: drop-shadow(0 0 12px rgba(0, 170, 255, 0.8));
         }
 
         .logo span {
             background: linear-gradient(90deg, #ffffff 0%, #1acbff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(26, 203, 255, 0.3);
         }
 
         .nav-actions {
@@ -101,38 +101,46 @@
         }
 
         .nav-btn {
-            background: rgba(0, 140, 255, 0.1);
+            background: rgba(0, 140, 255, 0.12);
             border: 1px solid var(--border-blue);
             color: var(--white);
-            padding: 6px 12px;
+            padding: 7px 13px;
             border-radius: 10px;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
             white-space: nowrap;
+            box-shadow: 0 0 10px rgba(0, 140, 255, 0.1);
         }
 
         .nav-btn:hover {
             background: var(--blue);
-            box-shadow: 0 0 18px rgba(0, 140, 255, 0.5);
+            box-shadow: var(--glow-strong);
+            transform: translateY(-2px);
         }
 
-        /* Hero Banner */
+        /* Enhanced Hero Banner with Glowing Animation */
         .hero {
             position: relative;
             background: var(--bg-card);
             backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-blue);
             border-radius: 20px;
-            padding: 30px 20px;
+            padding: 35px 20px;
             min-height: 320px;
-            box-shadow: var(--glow);
+            box-shadow: var(--glow-strong);
             overflow: hidden;
             display: flex;
             align-items: center;
             margin-top: 15px;
+            animation: borderPulse 4s infinite alternate;
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: rgba(25, 200, 255, 0.3); box-shadow: 0 0 20px rgba(0, 140, 255, 0.2); }
+            100% { border-color: rgba(25, 200, 255, 0.8); box-shadow: 0 0 40px rgba(0, 140, 255, 0.5); }
         }
 
         .hero-content {
@@ -146,13 +154,14 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 10px;
-            background: rgba(0, 140, 255, 0.1);
-            border: 1px solid rgba(25, 200, 255, 0.3);
+            padding: 4px 12px;
+            background: rgba(0, 140, 255, 0.2);
+            border: 1px solid rgba(25, 200, 255, 0.5);
             border-radius: 50px;
             font-size: 11px;
             color: var(--blue-light);
             margin-bottom: 12px;
+            box-shadow: 0 0 12px rgba(25, 200, 255, 0.3);
         }
 
         .hero-title {
@@ -166,6 +175,7 @@
             background: linear-gradient(135deg, var(--blue-light), var(--blue-deep));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(25, 200, 255, 0.4));
         }
 
         .hero-desc {
@@ -194,7 +204,26 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            opacity: 0.35;
+            opacity: 0.4;
+            filter: brightness(1.2);
+        }
+
+        .glowing-orb {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(25, 200, 255, 0.4) 0%, transparent 70%);
+            top: -20px;
+            left: -20px;
+            animation: orbFloat 6s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes orbFloat {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 30px) scale(1.3); }
         }
 
         /* Action Banners */
@@ -214,6 +243,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+            box-shadow: 0 0 15px rgba(0, 140, 255, 0.1);
         }
 
         .banner-info h4 {
@@ -246,7 +276,12 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--blue), var(--blue-deep));
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(0, 140, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 140, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--glow-strong);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -255,17 +290,24 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
+        .btn-secondary:hover {
+            border-color: var(--border-blue);
+            box-shadow: 0 0 15px rgba(25, 200, 255, 0.3);
+        }
+
         .btn-econ {
             background: linear-gradient(135deg, #04986d, var(--green));
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(16, 217, 155, 0.3);
         }
 
         .btn-purple {
             background: linear-gradient(135deg, var(--purple), var(--blue-deep));
             color: var(--white);
+            box-shadow: 0 4px 15px rgba(105, 76, 255, 0.3);
         }
 
-        /* Section & Cards */
+        /* Section Header */
         .section-header {
             text-align: center;
             margin: 35px 0 20px;
@@ -275,6 +317,7 @@
             font-size: 20px;
             font-weight: 900;
             margin-bottom: 4px;
+            text-shadow: 0 0 10px rgba(0, 140, 255, 0.3);
         }
 
         .section-header p {
@@ -282,6 +325,7 @@
             font-size: 12px;
         }
 
+        /* Grid System */
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -299,6 +343,13 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-blue);
+            box-shadow: var(--glow);
+            transform: translateY(-3px);
         }
 
         .card-icon {
@@ -325,9 +376,7 @@
             margin-bottom: 2px;
         }
 
-        .card-price-econ {
-            color: var(--green) !important;
-        }
+        .card-price-econ { color: var(--green) !important; }
 
         .card-sub {
             font-size: 10px;
@@ -353,10 +402,102 @@
             padding: 2px 10px;
             border-radius: 20px;
             white-space: nowrap;
+            box-shadow: 0 0 10px rgba(0, 140, 255, 0.5);
         }
 
         .card-badge-econ {
             background: linear-gradient(135deg, #059669, var(--green)) !important;
+        }
+
+        /* Dynamic Interactive Chapters (Modals/Accordions) */
+        .chapter-box {
+            background: rgba(7, 14, 28, 0.9);
+            border: 1px solid var(--border-blue);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: var(--glow);
+            display: none;
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        .chapter-box.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .chapter-header h3 {
+            font-size: 16px;
+            color: var(--blue-light);
+            font-weight: 800;
+        }
+
+        .close-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .guide-step {
+            background: rgba(0, 140, 255, 0.05);
+            border-right: 3px solid var(--blue-light);
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: var(--text-main);
+        }
+
+        .guide-step code {
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--blue-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 11px;
+        }
+
+        /* Contact Details Inside Site */
+        .contact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .contact-item {
+            background: rgba(10, 20, 38, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 13px;
+            color: var(--blue-light);
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
         }
 
         /* Help Cards Grid */
@@ -372,6 +513,12 @@
             border-radius: 14px;
             padding: 14px 10px;
             text-align: center;
+            transition: all 0.3s;
+        }
+
+        .help-card:hover {
+            border-color: var(--border-blue);
+            box-shadow: var(--glow);
         }
 
         .help-card h4 {
@@ -386,13 +533,14 @@
             margin-bottom: 10px;
         }
 
-        /* About Us Section Style */
+        /* About Box & Stats */
         .about-box {
             background: rgba(7, 14, 28, 0.85);
             border: 1px solid var(--border-blue);
             border-radius: 16px;
             padding: 20px 16px;
             text-align: center;
+            box-shadow: var(--glow);
         }
 
         .about-box p {
@@ -415,6 +563,7 @@
             color: var(--blue-light);
             font-size: 18px;
             font-weight: 900;
+            text-shadow: 0 0 10px rgba(25, 200, 255, 0.5);
         }
 
         .stat-item span {
@@ -423,10 +572,6 @@
         }
 
         /* FAQ Section */
-        .faq-wrapper {
-            max-width: 100%;
-        }
-
         details {
             background: rgba(9, 19, 36, 0.8);
             border: 1px solid var(--border);
@@ -451,9 +596,7 @@
             color: var(--blue-light);
         }
 
-        details[open] summary::after {
-            content: '−';
-        }
+        details[open] summary::after { content: '−'; }
 
         details p {
             margin-top: 8px;
@@ -465,12 +608,13 @@
 
         /* CTA Section */
         .cta-box {
-            background: radial-gradient(circle at 50% 0%, rgba(0, 160, 255, 0.16), transparent 55%), linear-gradient(145deg, rgba(8, 22, 43, 0.9), rgba(4, 9, 19, 0.9));
+            background: radial-gradient(circle at 50% 0%, rgba(0, 160, 255, 0.2), transparent 60%), linear-gradient(145deg, rgba(8, 22, 43, 0.9), rgba(4, 9, 19, 0.9));
             border: 1px solid var(--border-blue);
             border-radius: 18px;
             padding: 30px 16px;
             text-align: center;
             margin: 35px 0 20px;
+            box-shadow: var(--glow-strong);
         }
 
         .cta-box h2 {
@@ -495,46 +639,16 @@
             background: rgba(0, 0, 0, 0.3);
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 480px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .card {
-                padding: 12px 8px;
-            }
-
-            .card h3 {
-                font-size: 12px;
-            }
-
-            .card-price {
-                font-size: 14px;
-            }
-
-            .card-sub {
-                font-size: 9px;
-            }
-
-            .hero {
-                text-align: center;
-                padding: 25px 15px;
-            }
-
-            .hero-actions {
-                justify-content: center;
-            }
-
-            .banner-box {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .banner-box .btn {
-                width: 100%;
-            }
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .card { padding: 12px 8px; }
+            .card h3 { font-size: 12px; }
+            .card-price { font-size: 14px; }
+            .card-sub { font-size: 9px; }
+            .hero { text-align: center; padding: 25px 15px; }
+            .hero-actions { justify-content: center; }
+            .banner-box { flex-direction: column; text-align: center; }
+            .banner-box .btn { width: 100%; }
         }
     </style>
 </head>
@@ -545,27 +659,29 @@
         <div class="container nav">
             <div class="logo">
                 <img src="logo.png" alt="AMINI NETWORK">
-                <span>AMINI</span>
+                <span>AMINI NETWORK</span>
             </div>
             <div class="nav-actions">
-                <a href="#about" class="nav-btn">درباره ما</a>
+                <button class="nav-btn" onclick="toggleChapter('about-chapter')">🌐 درباره ما</button>
                 <button class="nav-btn" onclick="openTelegram('charge')">💳 شارژ</button>
-                <button class="nav-btn" onclick="openTelegram('')">📞 پشتیبانی</button>
+                <button class="nav-btn" onclick="toggleChapter('support-chapter')">📞 پشتیبانی</button>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- Hero Banner -->
+
+        <!-- Hero Banner Live Animations -->
         <section class="hero">
             <div class="hero-bg-wrapper">
-                <img src="header.png.png" alt="Amini Network">
+                <img src="header.png.png" alt="Amini Network Live Center">
+                <div class="glowing-orb"></div>
             </div>
 
             <div class="hero-content">
-                <div class="hero-badge">⚡ پلتفرم رسمی خدمات شبکه و نرم‌افزار</div>
+                <div class="hero-badge">⚡ مرکز رسمی خدمات شبکه و نرم‌افزار</div>
                 <h1 class="hero-title">اتصال پایدار،<br><span>سرعت بی‌نهایت</span></h1>
-                <p class="hero-desc">راهکارهای تخصصی نرم‌افزار موبایل، شبکه و اینترنت پرسرعت</p>
+                <p class="hero-desc">ارائه سرویس‌های فوق‌سریع، ابزارهای تخصصی موبایل و VPN اختصاصی</p>
                 <div class="hero-actions">
                     <a href="#software" class="btn btn-primary">خدمات نرم‌افزار</a>
                     <a href="#vpn" class="btn btn-secondary">پلن‌های VPN</a>
@@ -573,12 +689,63 @@
             </div>
         </section>
 
+        <!-- Chapter: Dedicated About Us -->
+        <div id="about-chapter" class="chapter-box">
+            <div class="chapter-header">
+                <h3>🌐 درباره مجموعه AMINI NETWORK</h3>
+                <button class="close-btn" onclick="toggleChapter('about-chapter')">✕ بستن</button>
+            </div>
+            <div class="about-box">
+                <p>مجموعه <strong>AMINI NETWORK</strong> با هدف ارائه جدیدترین و باکیفیت‌ترین راهکارهای تخصصی نرم‌افزار موبایل، آنلاک، حذف FRP و سرویس‌های اینترنت اختصاصی بدون محدودیت فعالیت می‌کند. هدف ما حفظ امنیت، پایداری بالا و تجربه سرعت واقعی در وب است.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>۹۹.۹٪</h3>
+                        <span>آپتایم سرورها</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>۲۴/۷</h3>
+                        <span>پشتیبانی فعال</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+۵,۰۰۰</h3>
+                        <span>کاربر رضایتمند</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter: Dedicated Direct Support -->
+        <div id="support-chapter" class="chapter-box">
+            <div class="chapter-header">
+                <h3>📞 مرکز پشتیبانی و ارتباط مستقیم</h3>
+                <button class="close-btn" onclick="toggleChapter('support-chapter')">✕ بستن</button>
+            </div>
+            <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">در صورت بروز هرگونه مشکل یا نیاز به راهنمایی از راه‌های زیر با ما در تماس باشید:</p>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <h4>👨‍💻 پشتیبانی ادمین</h4>
+                    <p>پاسخگویی سریع به سوالات و سفارشات</p>
+                    <button class="btn btn-primary" onclick="window.open('https://t.me/Arkan_Amini', '_blank')">پیام به ادمین (Arkan_Amini@)</button>
+                </div>
+                <div class="contact-item">
+                    <h4>🤖 ربات هوشمند تلگرام</h4>
+                    <p>مدیریت سرویس‌ها و خرید آنلاین</p>
+                    <button class="btn btn-purple" onclick="openTelegram('')">ورود به ربات (@arkanvpnn_bot)</button>
+                </div>
+                <div class="contact-item">
+                    <h4>📢 کانال رسمی اطلاع‌رسانی</h4>
+                    <p>دریافت اخبار سرورها و تخفیف‌ها</p>
+                    <button class="btn btn-secondary" onclick="window.open('https://t.me/Amini_net', '_blank')">عضویت در کانال (Amini_net@)</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Action Banners -->
         <div class="action-banners">
             <div class="banner-box">
                 <div class="banner-info">
-                    <h4>💳 افزایش موجودی</h4>
-                    <p>شارژ آنی آنلاین، کارت‌به‌کارت و کریپتو</p>
+                    <h4>💳 افزایش سریع موجودی</h4>
+                    <p>شارژ آنلاین، کارت‌به‌کارت و کریپتو</p>
                 </div>
                 <button class="btn btn-primary" onclick="openTelegram('charge')">افزایش موجودی</button>
             </div>
@@ -590,6 +757,51 @@
                 </div>
                 <button class="btn btn-purple" onclick="openTelegram('invite')">لینک دعوت</button>
             </div>
+        </div>
+
+        <!-- Dynamic Software Tutorial Chapters -->
+        <div id="android-guide" class="chapter-box">
+            <div class="chapter-header">
+                <h3>🤖 آموزش اتصال در اندروید (v2rayNG / MahsaNG)</h3>
+                <button class="close-btn" onclick="toggleChapter('android-guide')">✕ بستن</button>
+            </div>
+            <div class="guide-step">۱. نرم‌افزار <b>v2rayNG</b> یا <b>MahsaNG</b> را از گوگل پلی دانلود و نصب کنید.</div>
+            <div class="guide-step">۲. لینک اختصاصی دریافت شده از ربات را کپی کنید.</div>
+            <div class="guide-step">۳. وارد برنامه شده، علامت <code>+</code> بالای صفحه را بزنید و گزینه <b>Import config from Clipboard</b> را انتخاب کنید.</div>
+            <div class="guide-step">۴. روی دکمه دایره‌ای اتصال کلیک کنید تا متصل شوید.</div>
+        </div>
+
+        <div id="ios-guide" class="chapter-box">
+            <div class="chapter-header">
+                <h3>🍎 آموزش اتصال در آیفون (Streisand / V2Box)</h3>
+                <button class="close-btn" onclick="toggleChapter('ios-guide')">✕ بستن</button>
+            </div>
+            <div class="guide-step">۱. نرم‌افزار <b>Streisand</b> یا <b>V2Box</b> را از اپ استور دانلود کنید.</div>
+            <div class="guide-step">۲. لینک اشتراک خود را کپی کنید.</div>
+            <div class="guide-step">۳. وارد برنامه شده، دکمه <code>+</code> یا <b>Add Subscription</b> را بزنید.</div>
+            <div class="guide-step">۴. لینک کپی شده را قرار داده و ذخیره (Save) کنید، سپس اتصال را فعال نمایید.</div>
+        </div>
+
+        <div id="windows-guide" class="chapter-box">
+            <div class="chapter-header">
+                <h3>💻 آموزش اتصال در ویندوز (v2rayN)</h3>
+                <button class="close-btn" onclick="toggleChapter('windows-guide')">✕ بستن</button>
+            </div>
+            <div class="guide-step">۱. نرم‌افزار <b>v2rayN</b> را دانلود و از حالت فشرده خارج کنید.</div>
+            <div class="guide-step">۲. کانفیگ یا لینک دریافت شده را کپی کنید.</div>
+            <div class="guide-step">۳. درون برنامه کلیدهای ترکیبی <code>Ctrl + V</code> را بزنید تا سرورها اضافه شوند.</div>
+            <div class="guide-step">۴. روی آیکون برنامه در تسک‌بار راست کلیک کرده و <b>System Proxy</b> را روی حالت <b>Set System Proxy</b> بگذارید.</div>
+        </div>
+
+        <div id="mac-guide" class="chapter-box">
+            <div class="chapter-header">
+                <h3>🍏 آموزش اتصال در مک‌بوک (V2Box / Sing-Box)</h3>
+                <button class="close-btn" onclick="toggleChapter('mac-guide')">✕ بستن</button>
+            </div>
+            <div class="guide-step">۱. نرم‌افزار <b>V2Box</b> یا <b>Sing-Box</b> را برای مک دانلود کنید.</div>
+            <div class="guide-step">۲. لینک خریداری شده را کپی نمایید.</div>
+            <div class="guide-step">۳. در بخش <b>Configs</b> گزینه <b>Import Subscription</b> را انتخاب کنید و لینک را وارد کنید.</div>
+            <div class="guide-step">۴. دکمه Connect را بزنید تا سرویس شما متصل شود.</div>
         </div>
 
         <!-- Section 1: Software Services -->
@@ -769,58 +981,33 @@
             </div>
         </section>
 
-        <!-- Section 4: Connection Guide -->
+        <!-- Section 4: Connection Guide Chapters Trigger -->
         <section id="guide">
             <div class="section-header">
-                <h2>ℹ️ راهنمای اتصال</h2>
-                <p>برنامه‌های موردنیاز سیستم‌عامل‌ها</p>
+                <h2>ℹ️ راهنمای اتصال و دانلود برنامه‌ها</h2>
+                <p>آموزش متناسب با دستگاه خود را باز کنید</p>
             </div>
 
             <div class="help-grid">
                 <div class="help-card">
                     <h4>🤖 اندروید</h4>
                     <p>v2rayNG / MahsaNG</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_android')">آموزش</button>
+                    <button class="btn btn-secondary" onclick="toggleChapter('android-guide')">مشاهده آموزش</button>
                 </div>
                 <div class="help-card">
                     <h4>🍎 آیفون</h4>
                     <p>Streisand / V2Box</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_ios')">آموزش</button>
+                    <button class="btn btn-secondary" onclick="toggleChapter('ios-guide')">مشاهده آموزش</button>
                 </div>
                 <div class="help-card">
                     <h4>💻 ویندوز</h4>
                     <p>v2rayN</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_windows')">آموزش</button>
+                    <button class="btn btn-secondary" onclick="toggleChapter('windows-guide')">مشاهده آموزش</button>
                 </div>
                 <div class="help-card">
                     <h4>🍏 مک‌بوک</h4>
                     <p>V2Box / Sing-Box</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_mac')">آموزش</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 5: About Us -->
-        <section id="about">
-            <div class="section-header">
-                <h2>🌐 درباره AMINI NETWORK</h2>
-            </div>
-
-            <div class="about-box">
-                <p>مجموعه <strong>AMINI NETWORK</strong> ارائه دهنده خدمات تخصصی نرم‌افزار موبایل، خدمات شبکه و اینترنت اختصاصی بدون محدودیت با سرورهای ابری قدرتمند و پشتیبانی ۲۴ ساعته می‌باشد.</p>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>۹۹.۹٪</h3>
-                        <span>آپتایم</span>
-                    </div>
-                    <div class="stat-item">
-                        <h3>۲۴/۷</h3>
-                        <span>پشتیبانی</span>
-                    </div>
-                    <div class="stat-item">
-                        <h3>+۵,۰۰۰</h3>
-                        <span>کاربر</span>
-                    </div>
+                    <button class="btn btn-secondary" onclick="toggleChapter('mac-guide')">مشاهده آموزش</button>
                 </div>
             </div>
         </section>
@@ -847,7 +1034,7 @@
         <section>
             <div class="cta-box">
                 <h2>نیاز به مشاوره دارید؟</h2>
-                <p>از طریق ربات تلگرام با ما در ارتباط باشید.</p>
+                <p>از طریق ربات تلگرام یا ادمین با ما در ارتباط باشید.</p>
                 <button class="btn btn-primary" onclick="openTelegram('')">ورود به ربات تلگرام</button>
             </div>
         </section>
@@ -856,12 +1043,25 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            &copy; 2026 AMINI NETWORK
+            &copy; 2026 AMINI NETWORK — کلیه حقوق محفوظ است.
         </div>
     </footer>
 
-    <!-- Script -->
+    <!-- Interactive Script -->
     <script>
+        function toggleChapter(id) {
+            const box = document.getElementById(id);
+            if (box) {
+                if (box.classList.contains('active')) {
+                    box.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.chapter-box').forEach(el => el.classList.remove('active'));
+                    box.classList.add('active');
+                    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        }
+
         function openTelegram(param) {
             const botUsername = "arkanvpnn_bot";
             const startParam = param ? `?start=${param}` : "";

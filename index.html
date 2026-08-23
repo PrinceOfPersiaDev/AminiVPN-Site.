@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMINI NETWORK | خدمات تخصصی نرم‌افزار و VPN</title>
-    <meta name="description" content="AMINI NETWORK - ارائه خدمات تخصصی نرم‌افزار موبایل، حذف FRP، اکانت شیائومی و سرویس‌های پرسرعت VPN.">
+    <title>AMINI NETWORK | مرکز تخصصی خدمات نرم‌افزار و شبکه</title>
+    <meta name="description" content="ارائه خدمات تخصصی نرم‌افزار موبایل، حذف FRP، اکانت شیائومی و اشتراک‌های اختصاصی وب.">
+    
+    <!-- فونت استاندارد و رسمی وزیرمتن -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --bg-main: #060913;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.85);
+            --primary: #0284c7;
+            --primary-light: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.25);
+            --accent: #6366f1;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(56, 189, 248, 0.4);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        :root {
-            --bg: #050b18;
-            --card: #0b1426;
-            --card2: #0e1b31;
-            --blue: #08a9ff;
-            --blue2: #006eff;
-            --text: #ffffff;
-            --muted: #94a3b8;
-            --border: rgba(56, 189, 248, 0.15);
+            font-family: 'Vazirmatn', sans-serif;
         }
 
         html {
@@ -29,514 +38,531 @@
         }
 
         body {
-            font-family: Tahoma, 'Segoe UI', Arial, sans-serif;
-            background:
-                radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.18), transparent 35%),
-                var(--bg);
-            color: var(--text);
-            line-height: 1.8;
+            background-color: var(--bg-main);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.15), transparent 40%),
+                radial-gradient(circle at 100% 50%, rgba(99, 102, 241, 0.08), transparent 30%);
+            color: var(--text-main);
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-        }
-
         .container {
-            width: 92%;
-            max-width: 1150px;
-            margin: auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         /* Header */
         header {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(5, 11, 24, 0.85);
-            backdrop-filter: blur(15px);
+            z-index: 1000;
+            background: rgba(6, 9, 19, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav {
-            min-height: 72px;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .logo span {
-            color: var(--blue);
+            background: linear-gradient(135deg, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .nav-button {
-            color: white;
-            background: rgba(8, 169, 255, 0.1);
-            border: 1px solid rgba(8, 169, 255, 0.3);
-            padding: 8px 17px;
+        .nav-btn {
+            background: rgba(2, 132, 199, 0.1);
+            border: 1px solid var(--primary-light);
+            color: var(--primary-light);
+            padding: 9px 20px;
             border-radius: 10px;
+            font-weight: 600;
             font-size: 14px;
             cursor: pointer;
-            transition: 0.25s;
+            transition: all 0.3s ease;
         }
 
-        .nav-button:hover {
-            background: rgba(8, 169, 255, 0.2);
+        .nav-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 20px var(--primary-glow);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            position: relative;
+            padding: 90px 0 60px;
             text-align: center;
-            padding: 80px 15px 60px;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 7px 15px;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
             border-radius: 50px;
-            background: rgba(8, 169, 255, 0.1);
-            border: 1px solid rgba(8, 169, 255, 0.25);
-            color: #7dd3fc;
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--primary-light);
+            margin-bottom: 24px;
         }
 
         .hero h1 {
-            font-size: clamp(32px, 6vw, 56px);
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 18px;
         }
 
-        .hero h1 span {
-            color: var(--blue);
-            text-shadow: 0 0 30px rgba(8, 169, 255, 0.35);
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            max-width: 700px;
-            margin: auto;
-            color: var(--muted);
-            font-size: 18px;
+            font-size: 17px;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 32px;
+            font-weight: 300;
         }
 
-        .hero-buttons {
+        .hero-actions {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-top: 32px;
         }
 
-        .button {
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 13px 25px;
+            padding: 12px 28px;
             border-radius: 12px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(135deg, var(--blue), var(--blue2));
-            box-shadow: 0 8px 30px rgba(0, 110, 255, 0.2);
-            transition: 0.25s;
-            border: none;
+            font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
         }
 
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 140, 255, 0.35);
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 20px var(--primary-glow);
         }
 
-        .button.secondary {
-            background: transparent;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
             border: 1px solid var(--border);
-            box-shadow: none;
         }
 
-        /* Sections & Heading */
-        section {
-            padding: 40px 0;
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
-        .section-heading {
+        /* Section Titles */
+        .section-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 60px 0 36px;
         }
 
-        .section-heading h2 {
-            font-size: 30px;
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
             margin-bottom: 8px;
-            color: var(--text);
         }
 
-        .section-heading p {
-            color: var(--muted);
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 14px;
         }
 
-        /* Cards Grid Layout */
+        /* Grid & Cards */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .card {
-            position: relative;
-            background: linear-gradient(180deg, var(--card2), var(--card));
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 24px;
+            border-radius: 18px;
+            padding: 28px 24px;
             text-align: center;
-            transition: 0.25s;
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(8, 169, 255, 0.5);
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .card.popular {
-            border-color: rgba(8, 169, 255, 0.7);
-            box-shadow: 0 0 35px rgba(8, 169, 255, 0.08);
-        }
-
-        .popular-label {
+        .card-badge {
             position: absolute;
-            top: -13px;
-            right: 50%;
-            transform: translateX(50%);
-            background: linear-gradient(135deg, var(--blue), var(--blue2));
-            padding: 4px 13px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: bold;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0284c7, #6366f1);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
         }
 
         .card-icon {
-            font-size: 36px;
-            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 16px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-light);
         }
 
         .card h3 {
-            font-size: 20px;
+            font-size: 18px;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
         .card p {
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 13px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
 
-        .price {
-            color: #38bdf8;
-            font-size: 24px;
-            font-weight: bold;
+        .card-price {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary-light);
+            margin-bottom: 4px;
         }
 
-        .duration {
-            color: var(--muted);
-            font-size: 13px;
-            margin-bottom: 15px;
+        .card-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
         }
 
-        .card .button {
+        .card .btn {
             width: 100%;
-            margin-top: 10px;
-        }
-
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-        }
-
-        .feature {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 25px;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 35px;
-            margin-bottom: 8px;
-        }
-
-        .feature h3 {
-            margin-bottom: 8px;
-        }
-
-        .feature p {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* FAQ */
-        .faq {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        details {
-            background: var(--card);
-            border: 1px solid var(--border);
-            margin-bottom: 12px;
-            padding: 18px 20px;
-            border-radius: 14px;
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        details p {
-            color: var(--muted);
-            margin-top: 10px;
+            padding: 10px 0;
             font-size: 14px;
         }
 
-        /* CTA */
-        .cta {
-            margin-top: 30px;
-            padding: 45px 25px;
-            text-align: center;
-            border-radius: 25px;
-            background:
-                radial-gradient(circle at center, rgba(8, 169, 255, 0.18), transparent 60%),
-                var(--card);
+        /* FAQ */
+        .faq-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--bg-card);
             border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            padding: 16px 20px;
+            transition: all 0.2s;
         }
 
-        .cta h2 {
-            font-size: 28px;
-            margin-bottom: 8px;
+        details[open] {
+            border-color: var(--border-hover);
         }
 
-        .cta p {
-            color: var(--muted);
-            margin-bottom: 20px;
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 18px;
+            color: var(--primary-light);
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details p {
+            margin-top: 12px;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 300;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+        }
+
+        /* CTA Banner */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.15), rgba(99, 102, 241, 0.15));
+            border: 1px solid var(--border-hover);
+            border-radius: 24px;
+            padding: 50px 20px;
+            text-align: center;
+            margin: 80px 0 40px;
+        }
+
+        .cta-box h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
         }
 
         /* Footer */
         footer {
-            margin-top: 60px;
-            padding: 30px 0;
             border-top: 1px solid var(--border);
+            padding: 30px 0;
             text-align: center;
-            color: var(--muted);
+            color: var(--text-muted);
             font-size: 13px;
+            font-weight: 300;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 650px) {
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 600px) {
+            .hero { padding: 60px 0 40px; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-
 <body>
 
 <header>
     <div class="container nav">
-        <div class="logo">💎 <span>AMINI</span> NETWORK</div>
-        <button class="nav-button" onclick="openTelegram('')">
-            🤖 ربات تلگرام
-        </button>
+        <div class="logo">
+            <span>AMINI NETWORK</span>
+        </div>
+        <button class="nav-btn" onclick="openTelegram('')">پشتیبانی تلگرام</button>
     </div>
 </header>
 
 <section class="hero">
     <div class="container">
-        <div class="badge">⚡ مرجع خدمات تخصصی اینترنت و نرم‌افزار</div>
-        <h1>خدمات تخصصی <span>AMINI NETWORK</span></h1>
-        <p>ارائه‌دهنده سرویس‌های آنلاین نرم‌افزار موبایل و اشتراک‌های پرسرعت اینترنت</p>
-
-        <div class="hero-buttons">
-            <a class="button" href="#software">🌐 خدمات نرم‌افزار</a>
-            <a class="button secondary" href="#vpn">🛍️ پلن‌های VPN</a>
+        <div class="hero-badge">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            پلتفرم رسمی خدمات شبکه و نرم‌افزار
+        </div>
+        <h1>ارائه راهکارهای تخصصی <br><span class="gradient-text">نرم‌افزار موبایل و شبکه</span></h1>
+        <p>ثبت سفارش مستقیم آنلاین، حذف قفل‌های FRP، اکانت‌های اختصاصی و سرویس‌های پرسرعت اینترنت</p>
+        <div class="hero-actions">
+            <a href="#software" class="btn btn-primary">خدمات نرم‌افزار</a>
+            <a href="#vpn" class="btn btn-secondary">پلن‌های VPN</a>
         </div>
     </div>
 </section>
 
-<!-- ۱. بخش خدمات تخصصی نرم‌افزار موبایل (در اولویت اول) -->
+<!-- بخش اول: خدمات نرم‌افزاری -->
 <section id="software">
     <div class="container">
-        <div class="section-heading">
-            <h2>🌐 خدمات تخصصی نرم‌افزار موبایل</h2>
-            <p>ثبت سفارش آنلاین انواع لایسنس، FRP و اکانت تخصصی</p>
+        <div class="section-header">
+            <h2>خدمات تخصصی نرم‌افزار</h2>
+            <p>سرویس‌های آنلاین رفع مشکلات نرم‌افزاری انواع سیستم‌عامل‌ها</p>
         </div>
-
+        
         <div class="grid">
             <div class="card">
-                <div class="card-icon">🔓</div>
-                <h3>سرور FRP با کابل</h3>
-                <p>رفع و حذف FRP مستقیم با کابل</p>
-                <button class="button" onclick="openTelegram('srv_FRP_Cable')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <h3>سرور FRP با کابل</h3>
+                    <p>حذف و رفع قفل FRP به‌صورت مستقیم با کابل آنلاین</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_Cable')">ثبت سفارش</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">📡</div>
-                <h3>سرور FRP با IMEI</h3>
-                <p>حذف آنلاین بدون نیاز به کابل</p>
-                <button class="button" onclick="openTelegram('srv_FRP_IMEI')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3>سرور FRP با IMEI</h3>
+                    <p>حذف آنلاین و هوشمند بدون نیاز به کابل</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_IMEI')">ثبت سفارش</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>شیائومی اکانت (Mi Account)</h3>
-                <p>حذف رسمی قفل Mi Account</p>
-                <button class="button" onclick="openTelegram('srv_Mi_Account')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3>شیائومی اکانت (Mi Account)</h3>
+                    <p>حذف و آنلاک رسمی سرویس اکانت شیائومی</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_Mi_Account')">ثبت سفارش</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>سرور FRP شیائومی</h3>
-                <p>رفع قفل FRP اختصاصی شیائومی</p>
-                <button class="button" onclick="openTelegram('srv_FRP_Xiaomi')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3>سرور FRP شیائومی</h3>
+                    <p>برطرف‌سازی سریع قفل FRP گوشی‌های شیائومی</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_Xiaomi')">ثبت سفارش</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">📜</div>
-                <h3>اشتراک باکس و دانگل</h3>
-                <p>فروش لایسنس رسمی ابزارها</p>
-                <button class="button" onclick="openTelegram('srv_Box_License')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+                    </div>
+                    <h3>اشتراک باکس و دانگل</h3>
+                    <p>تامین و فروش لایسنس‌های معتبر و رسمی</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_Box_License')">ثبت سفارش</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">💳</div>
-                <h3>خرید کردیت (Credit)</h3>
-                <p>تامین اعتبار برنامه‌ها و ابزارها</p>
-                <button class="button" onclick="openTelegram('srv_Credit')">ثبت سفارش</button>
+                <div>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h3>خرید کردیت (Credit)</h3>
+                    <p>شارژ و تامین اعتبار انواع ابزارها و نرم‌افزارها</p>
+                </div>
+                <button class="btn btn-secondary" onclick="openTelegram('srv_Credit')">ثبت سفارش</button>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ۲. بخش پلن‌های VPN -->
+<!-- بخش دوم: سرویس‌های VPN -->
 <section id="vpn">
     <div class="container">
-        <div class="section-heading">
-            <h2>🛍️ اشتراک‌های AMINI VPN</h2>
-            <p>سرویس‌های ۳۰ روزه با حجم‌های متنوع و تحویل آنی</p>
+        <div class="section-header">
+            <h2>اشتراک‌های اینترنت و VPN</h2>
+            <p>سرویس‌های اختصاصی با سرورهای قدرتمند و پایداری بالا</p>
         </div>
 
         <div class="grid">
             <div class="card">
-                <div class="card-icon">🔹</div>
-                <h3>۱۰ گیگ</h3>
-                <div class="price">۶۰,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('10GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۱۰ گیگ</h3>
+                    <div class="card-price">۶۰,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('10GB')">خرید سرویس</button>
             </div>
 
-            <div class="card popular">
-                <div class="popular-label">پیشنهاد ویژه</div>
-                <div class="card-icon">🔥</div>
-                <h3>۲۰ گیگ</h3>
-                <div class="price">۹۲,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('20GB')">خرید پلن</button>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🔹</div>
-                <h3>۳۰ گیگ</h3>
-                <div class="price">۱۳۸,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('30GB')">خرید پلن</button>
+            <div class="card" style="border-color: var(--border-hover);">
+                <div class="card-badge">پیشنهاد ویژه</div>
+                <div>
+                    <h3>اشتراک ۲۰ گیگ</h3>
+                    <div class="card-price">۹۲,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('20GB')">خرید سرویس</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">🔹</div>
-                <h3>۴۰ گیگ</h3>
-                <div class="price">۱۸۴,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('40GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۳۰ گیگ</h3>
+                    <div class="card-price">۱۳۸,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('30GB')">خرید سرویس</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">⭐</div>
-                <h3>۵۰ گیگ</h3>
-                <div class="price">۲۳۰,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('50GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۴۰ گیگ</h3>
+                    <div class="card-price">۱۸۴,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('40GB')">خرید سرویس</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3>۶۰ گیگ</h3>
-                <div class="price">۲۷۶,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('60GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۵۰ گیگ</h3>
+                    <div class="card-price">۲۳۰,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('50GB')">خرید سرویس</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">💎</div>
-                <h3>۷۰ گیگ</h3>
-                <div class="price">۳۲۲,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('70GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۶۰ گیگ</h3>
+                    <div class="card-price">۲۷۶,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('60GB')">خرید سرویس</button>
             </div>
 
             <div class="card">
-                <div class="card-icon">👑</div>
-                <h3>۸۰ گیگ</h3>
-                <div class="price">۳۶۸,۰۰۰ تومان</div>
-                <div class="duration">۳۰ روزه</div>
-                <button class="button" onclick="openTelegram('80GB')">خرید پلن</button>
+                <div>
+                    <h3>اشتراک ۷۰ گیگ</h3>
+                    <div class="card-price">۳۲۲,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('70GB')">خرید سرویس</button>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- بخش ویژگی‌ها -->
-<section>
-    <div class="container">
-        <div class="section-heading">
-            <h2>✨ چرا AMINI NETWORK؟</h2>
-            <p>مزایای استفاده از خدمات مجموعه ما</p>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>سرعت و پایداری</h3>
-                <p>کیفیت بالای سرویس‌های شبکه و سرورهای اختصاصی.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🤖</div>
-                <h3>ربات اتوماتیک</h3>
-                <p>مدیریت، ثبت سفارش و دریافت سریع کدها از طریق ربات تلگرام.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🛒</div>
-                <h3>خرید آسان</h3>
-                <p>رابط کاربری ساده و امکان ثبت سفارش تنها با یک کلیک.</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📦</div>
-                <h3>تنوع خدمات</h3>
-                <p>پوشش جامع ابزارهای نرم‌افزاری و پلن‌های متنوع اینترنت.</p>
+            <div class="card">
+                <div>
+                    <h3>اشتراک ۸۰ گیگ</h3>
+                    <div class="card-price">۳۶۸,۰۰۰ تومان</div>
+                    <div class="card-sub">اعتبار ۳۰ روزه</div>
+                </div>
+                <button class="btn btn-primary" onclick="openTelegram('80GB')">خرید سرویس</button>
             </div>
         </div>
     </div>
@@ -545,42 +571,42 @@
 <!-- سوالات متداول -->
 <section>
     <div class="container">
-        <div class="section-heading">
-            <h2>❓ سوالات متداول</h2>
-            <p>پاسخ به سوالات رایج شما</p>
+        <div class="section-header">
+            <h2>سوالات متداول</h2>
+            <p>پاسخ به ابهامات رایج شما قبل از ثبت سفارش</p>
         </div>
 
-        <div class="faq">
+        <div class="faq-wrapper">
             <details>
-                <summary>چگونه سفارش خود را ثبت کنم؟</summary>
-                <p>کافیست روی دکمه ثبت سفارش یا خرید پلن کلیک کنید تا به صورت مستقیم وارد ربات تلگرام شوید و سفارش شما پردازش شود.</p>
+                <summary>فرآیند ارسال سفارشات به چه صورت انجام می‌شود؟</summary>
+                <p>پس از کلیک بر روی سرویس مورد نظر، به‌صورت اتوماتیک هدایت شده و اطلاعات لازم در ربات تلگرام ثبت و پردازش می‌شود.</p>
             </details>
             <details>
-                <summary>مدت اعتبار اشتراک‌های VPN چقدر است؟</summary>
-                <p>تمامی پلن‌های ارائه‌شده در حال حاضر دارای اعتبار ۳۰ روزه هستند.</p>
+                <summary>سرویس‌های نرم‌افزاری چقدر زمان می‌برند؟</summary>
+                <p>اغلب سرویس‌های نرم‌افزاری مانند FRP آنلاین به دلیل پردازش فوری، بین ۱۰ الی ۳۰ دقیقه زمان نیاز خواهند داشت.</p>
             </details>
             <details>
-                <summary>تحویل خدمات نرم‌افزاری چقدر زمان می‌برد؟</summary>
-                <p>سفارشات نرم‌افزاری و لایسنس‌ها پس از ارسال اطلاعات در ربات، در سریع‌ترین زمان ممکن پردازش و فعال می‌شوند.</p>
+                <summary>آیا پلن‌های VPN ضمانت اتصال دارند؟</summary>
+                <p>بله، تمامی سرورها با کیفیت اختصاصی تنظیم شده و پشتیبانی آنلاین در طول مدت اعتبار همراه شماست.</p>
             </details>
         </div>
     </div>
 </section>
 
-<!-- دکمه پایانی -->
+<!-- بنر انتهای صفحه -->
 <section>
     <div class="container">
-        <div class="cta">
-            <h2>🚀 آماده شروع هستید؟</h2>
-            <p>برای ثبت سریع سفارش و مدیریت حساب وارد ربات تلگرام شوید.</p>
-            <button class="button" onclick="openTelegram('')">🤖 ورود به ربات تلگرام</button>
+        <div class="cta-box">
+            <h2>نیاز به مشاوره یا ثبت سفارش دارید؟</h2>
+            <p>از طریق ربات هوشمند تلگرام می‌توانید کلیه سرویس‌ها را مدیریت و خریداری کنید.</p>
+            <button class="btn btn-primary" onclick="openTelegram('')">ورود به ربات تلگرام</button>
         </div>
     </div>
 </section>
 
 <footer>
     <div class="container">
-        © 2026 AMINI NETWORK — تمامی حقوق محفوظ است.
+        &copy; 2026 AMINI NETWORK — تمامی حقوق مادی و معنوی محفوظ است.
     </div>
 </footer>
 

@@ -14,7 +14,7 @@
         :root {
             --bg-main: #02050d;
             --bg-secondary: #050a16;
-            --bg-card: rgba(7, 14, 28, 0.75);
+            --bg-card: rgba(7, 14, 28, 0.85);
             --blue: #008cff;
             --blue-light: #19c8ff;
             --blue-deep: #1455ff;
@@ -43,7 +43,7 @@
         body {
             background: radial-gradient(circle at 50% -10%, rgba(0, 140, 255, 0.17), transparent 40%), var(--bg-main);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -58,7 +58,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(2, 5, 13, 0.85);
+            background: rgba(2, 5, 13, 0.92);
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(40, 150, 255, 0.15);
@@ -66,23 +66,23 @@
         }
 
         .nav {
-            min-height: 80px;
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
+            gap: 10px;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 18px;
+            gap: 8px;
+            font-size: 16px;
             font-weight: 900;
         }
 
         .logo img {
-            height: 42px;
+            height: 36px;
             width: auto;
             display: block;
             filter: drop-shadow(0 0 10px rgba(0, 170, 255, 0.5));
@@ -96,69 +96,70 @@
 
         .nav-actions {
             display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
         }
 
         .nav-btn {
             background: rgba(0, 140, 255, 0.1);
             border: 1px solid var(--border-blue);
             color: var(--white);
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 11px;
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s ease;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-btn:hover {
             background: var(--blue);
             box-shadow: 0 0 18px rgba(0, 140, 255, 0.5);
-            transform: translateY(-2px);
         }
 
-        /* Hero Banner Live Design */
+        /* Hero Banner */
         .hero {
             position: relative;
             background: var(--bg-card);
             backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 50px 40px;
-            min-height: 440px;
+            border-radius: 20px;
+            padding: 30px 20px;
+            min-height: 320px;
             box-shadow: var(--glow);
             overflow: hidden;
             display: flex;
             align-items: center;
-            margin-top: 25px;
+            margin-top: 15px;
         }
 
         .hero-content {
             max-width: 500px;
             z-index: 5;
             position: relative;
+            width: 100%;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
+            gap: 6px;
+            padding: 4px 10px;
             background: rgba(0, 140, 255, 0.1);
             border: 1px solid rgba(25, 200, 255, 0.3);
             border-radius: 50px;
-            font-size: 12px;
+            font-size: 11px;
             color: var(--blue-light);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .hero-title {
-            font-size: clamp(28px, 5vw, 42px);
+            font-size: clamp(22px, 5vw, 36px);
             font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.35;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
         .hero-title span {
@@ -169,13 +170,13 @@
 
         .hero-desc {
             color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 25px;
+            font-size: 12px;
+            margin-bottom: 20px;
         }
 
         .hero-actions {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
@@ -193,74 +194,36 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            opacity: 0.85;
-            filter: brightness(1.1);
+            opacity: 0.35;
         }
 
-        .light-sweep {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent 0%, rgba(25, 200, 255, 0.18) 50%, transparent 100%);
-            transform: skewX(-25deg);
-            animation: sweep 4s infinite ease-in-out;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .globe-glow {
-            position: absolute;
-            right: 15%;
-            top: 30%;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(25, 200, 255, 0.35) 0%, transparent 70%);
-            animation: pulseGlow 2.5s infinite alternate ease-in-out;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        @keyframes sweep {
-            0% { left: -100%; }
-            50% { left: 150%; }
-            100% { left: 150%; }
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: scale(0.85); opacity: 0.4; }
-            100% { transform: scale(1.15); opacity: 0.9; }
-        }
-
-        /* Referral & Charge Section */
+        /* Action Banners */
         .action-banners {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
         }
 
         .banner-box {
             background: linear-gradient(135deg, rgba(105, 76, 255, 0.15), rgba(0, 140, 255, 0.08));
             border: 1px solid var(--border-blue);
-            border-radius: 18px;
-            padding: 22px;
+            border-radius: 16px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 15px;
+            gap: 10px;
         }
 
         .banner-info h4 {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 800;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .banner-info p {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-muted);
         }
 
@@ -269,10 +232,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 22px;
-            border-radius: 12px;
+            padding: 10px 16px;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -283,35 +246,18 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--blue), var(--blue-deep));
             color: var(--white);
-            box-shadow: 0 4px 20px rgba(0, 140, 255, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 28px rgba(25, 200, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 140, 255, 0.3);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--border-blue);
-            background: rgba(0, 140, 255, 0.1);
-            transform: translateY(-2px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .btn-econ {
             background: linear-gradient(135deg, #04986d, var(--green));
             color: var(--white);
-            box-shadow: 0 4px 20px rgba(16, 217, 155, 0.25);
-        }
-
-        .btn-econ:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 28px rgba(16, 217, 155, 0.45);
         }
 
         .btn-purple {
@@ -322,65 +268,58 @@
         /* Section & Cards */
         .section-header {
             text-align: center;
-            margin: 60px 0 30px;
+            margin: 35px 0 20px;
         }
 
         .section-header h2 {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 900;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
         .card {
             position: relative;
             background: linear-gradient(145deg, rgba(10, 20, 38, 0.85), rgba(4, 9, 19, 0.8));
             border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 24px 20px;
+            border-radius: 16px;
+            padding: 16px 12px;
             text-align: center;
             backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-blue);
-            box-shadow: 0 10px 30px rgba(0, 140, 255, 0.15);
-        }
-
         .card-icon {
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 26px;
+            margin-bottom: 6px;
         }
 
         .card h3 {
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 12px;
-            margin-bottom: 18px;
+            font-size: 11px;
+            margin-bottom: 12px;
         }
 
         .card-price {
-            font-size: 21px;
+            font-size: 16px;
             font-weight: 900;
             color: var(--blue-light);
             margin-bottom: 2px;
@@ -391,27 +330,29 @@
         }
 
         .card-sub {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--text-muted);
-            margin-bottom: 18px;
+            margin-bottom: 12px;
         }
 
         .card .btn {
             width: 100%;
+            padding: 8px 10px;
+            font-size: 11px;
         }
 
         .card-badge {
             position: absolute;
-            top: -12px;
+            top: -10px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, var(--blue), var(--purple));
             color: #fff;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 800;
-            padding: 4px 14px;
+            padding: 2px 10px;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 130, 255, 0.3);
+            white-space: nowrap;
         }
 
         .card-badge-econ {
@@ -421,92 +362,82 @@
         /* Help Cards Grid */
         .help-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
 
         .help-card {
             background: rgba(9, 19, 36, 0.8);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 20px;
+            padding: 14px 10px;
             text-align: center;
         }
 
         .help-card h4 {
-            font-size: 15px;
-            margin-bottom: 8px;
+            font-size: 13px;
+            margin-bottom: 4px;
             color: var(--blue-light);
         }
 
         .help-card p {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         /* About Us Section Style */
         .about-box {
             background: rgba(7, 14, 28, 0.85);
             border: 1px solid var(--border-blue);
-            border-radius: 20px;
-            padding: 35px 30px;
+            border-radius: 16px;
+            padding: 20px 16px;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: var(--glow);
         }
 
         .about-box p {
             color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.9;
-            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
         .about-stats {
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 15px;
             border-top: 1px solid var(--border);
-            padding-top: 20px;
+            padding-top: 15px;
         }
 
         .stat-item h3 {
             color: var(--blue-light);
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 900;
         }
 
         .stat-item span {
-            font-size: 12px;
+            font-size: 10px;
             color: var(--text-muted);
         }
 
         /* FAQ Section */
         .faq-wrapper {
-            max-width: 760px;
-            margin: 0 auto;
+            max-width: 100%;
         }
 
         details {
             background: rgba(9, 19, 36, 0.8);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 12px;
-            padding: 16px 20px;
-            transition: 0.3s ease;
-        }
-
-        details[open] {
-            border-color: var(--border-blue);
+            border-radius: 12px;
+            margin-bottom: 8px;
+            padding: 12px 14px;
         }
 
         summary {
             font-weight: 700;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -516,7 +447,7 @@
 
         summary::after {
             content: '+';
-            font-size: 20px;
+            font-size: 16px;
             color: var(--blue-light);
         }
 
@@ -525,53 +456,85 @@
         }
 
         details p {
-            margin-top: 12px;
+            margin-top: 8px;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 11px;
             border-top: 1px solid var(--border);
-            padding-top: 10px;
+            padding-top: 8px;
         }
 
         /* CTA Section */
         .cta-box {
-            position: relative;
             background: radial-gradient(circle at 50% 0%, rgba(0, 160, 255, 0.16), transparent 55%), linear-gradient(145deg, rgba(8, 22, 43, 0.9), rgba(4, 9, 19, 0.9));
             border: 1px solid var(--border-blue);
-            border-radius: 24px;
-            padding: 50px 20px;
+            border-radius: 18px;
+            padding: 30px 16px;
             text-align: center;
-            margin: 60px 0 35px;
-            box-shadow: var(--glow);
+            margin: 35px 0 20px;
         }
 
         .cta-box h2 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 900;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .cta-box p {
             color: var(--text-muted);
-            font-size: 13px;
-            margin-bottom: 22px;
+            font-size: 11px;
+            margin-bottom: 16px;
         }
 
         /* Footer */
         footer {
             border-top: 1px solid rgba(40, 150, 255, 0.15);
-            padding: 25px 0;
+            padding: 20px 0;
             text-align: center;
             color: var(--text-muted);
-            font-size: 12px;
+            font-size: 11px;
             background: rgba(0, 0, 0, 0.3);
         }
 
-        @media (max-width: 850px) {
-            .hero { text-align: center; justify-content: center; padding: 40px 20px; }
-            .hero-content { max-width: 100%; }
-            .hero-actions { justify-content: center; }
-            .hero-bg-wrapper img { opacity: 0.35; }
-            .banner-box { text-align: center; flex-direction: column; }
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .card {
+                padding: 12px 8px;
+            }
+
+            .card h3 {
+                font-size: 12px;
+            }
+
+            .card-price {
+                font-size: 14px;
+            }
+
+            .card-sub {
+                font-size: 9px;
+            }
+
+            .hero {
+                text-align: center;
+                padding: 25px 15px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .banner-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner-box .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -582,69 +545,66 @@
         <div class="container nav">
             <div class="logo">
                 <img src="logo.png" alt="AMINI NETWORK">
-                <span>AMINI NETWORK</span>
+                <span>AMINI</span>
             </div>
             <div class="nav-actions">
                 <a href="#about" class="nav-btn">درباره ما</a>
-                <button class="nav-btn" onclick="openTelegram('charge')">💳 افزایش موجودی</button>
+                <button class="nav-btn" onclick="openTelegram('charge')">💳 شارژ</button>
                 <button class="nav-btn" onclick="openTelegram('')">📞 پشتیبانی</button>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <!-- Hero Banner Live Animations -->
+        <!-- Hero Banner -->
         <section class="hero">
             <div class="hero-bg-wrapper">
-                <img src="header.png.png" alt="Amini Network Live Connections">
-                <div class="light-sweep"></div>
-                <div class="globe-glow"></div>
+                <img src="header.png.png" alt="Amini Network">
             </div>
 
             <div class="hero-content">
                 <div class="hero-badge">⚡ پلتفرم رسمی خدمات شبکه و نرم‌افزار</div>
                 <h1 class="hero-title">اتصال پایدار،<br><span>سرعت بی‌نهایت</span></h1>
-                <p class="hero-desc">ارائه راهکارهای تخصصی نرم‌افزار موبایل، شبکه، سرویس‌های اختصاصی و اینترنت پرسرعت</p>
+                <p class="hero-desc">راهکارهای تخصصی نرم‌افزار موبایل، شبکه و اینترنت پرسرعت</p>
                 <div class="hero-actions">
                     <a href="#software" class="btn btn-primary">خدمات نرم‌افزار</a>
                     <a href="#vpn" class="btn btn-secondary">پلن‌های VPN</a>
-                    <a href="#guide" class="btn btn-secondary">راهنمای اتصال</a>
                 </div>
             </div>
         </section>
 
-        <!-- Action Banners (افزایش موجودی & دعوت از دوستان) -->
+        <!-- Action Banners -->
         <div class="action-banners">
             <div class="banner-box">
                 <div class="banner-info">
-                    <h4>💳 افزایش سریع موجودی کیف‌پول</h4>
-                    <p>شارژ آنی آن‌لاین، کارت‌به‌کارت یا کریپتو جهت خرید خودکار</p>
+                    <h4>💳 افزایش موجودی</h4>
+                    <p>شارژ آنی آنلاین، کارت‌به‌کارت و کریپتو</p>
                 </div>
                 <button class="btn btn-primary" onclick="openTelegram('charge')">افزایش موجودی</button>
             </div>
 
             <div class="banner-box">
                 <div class="banner-info">
-                    <h4>🎁 دعوت از دوستان (۵ گیگ رایگان)</h4>
-                    <p>با معرفی دوستان خود ۵ گیگابایت حجم هدیه دریافت کنید</p>
+                    <h4>🎁 دعوت از دوستان</h4>
+                    <p>دریافت ۵ گیگابایت حجم هدیه</p>
                 </div>
-                <button class="btn btn-purple" onclick="openTelegram('invite')">دریافت لینک دعوت</button>
+                <button class="btn btn-purple" onclick="openTelegram('invite')">لینک دعوت</button>
             </div>
         </div>
 
         <!-- Section 1: Software Services -->
         <section id="software">
             <div class="section-header">
-                <h2>🛠️ خدمات تخصصی نرم‌افزار</h2>
-                <p>سرویس‌های آنلاین رفع مشکلات نرم‌افزاری انواع سیستم‌عامل‌ها</p>
+                <h2>🛠️ خدمات نرم‌افزار</h2>
+                <p>سرویس‌های آنلاین رفع مشکلات نرم‌افزاری</p>
             </div>
 
             <div class="grid">
                 <div class="card">
                     <div>
                         <div class="card-icon">🔓</div>
-                        <h3>سرور FRP با کابل</h3>
-                        <p>حذف و رفع قفل FRP به‌صورت مستقیم با کابل آنلاین</p>
+                        <h3>FRP با کابل</h3>
+                        <p>حذف قفل با کابل</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_Cable')">ثبت سفارش</button>
                 </div>
@@ -652,8 +612,8 @@
                 <div class="card">
                     <div>
                         <div class="card-icon">📡</div>
-                        <h3>سرور FRP با IMEI</h3>
-                        <p>حذف آنلاین و هوشمند بدون نیاز به کابل</p>
+                        <h3>FRP با IMEI</h3>
+                        <p>حذف آنلاین بدون کابل</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_IMEI')">ثبت سفارش</button>
                 </div>
@@ -661,8 +621,8 @@
                 <div class="card">
                     <div>
                         <div class="card-icon">📱</div>
-                        <h3>شیائومی اکانت (Mi Account)</h3>
-                        <p>حذف و آنلاک رسمی سرویس اکانت شیائومی</p>
+                        <h3>Mi Account</h3>
+                        <p>حذف اکانت شیائومی</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_Mi_Account')">ثبت سفارش</button>
                 </div>
@@ -670,8 +630,8 @@
                 <div class="card">
                     <div>
                         <div class="card-icon">⚡</div>
-                        <h3>سرور FRP شیائومی</h3>
-                        <p>برطرف‌سازی سریع قفل FRP گوشی‌های شیائومی</p>
+                        <h3>FRP شیائومی</h3>
+                        <p>رفع فوری قفل FRP</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_FRP_Xiaomi')">ثبت سفارش</button>
                 </div>
@@ -679,8 +639,8 @@
                 <div class="card">
                     <div>
                         <div class="card-icon">📜</div>
-                        <h3>اشتراک باکس و دانگل</h3>
-                        <p>تامین و فروش لایسنس‌های معتبر و رسمی</p>
+                        <h3>باکس و دانگل</h3>
+                        <p>لایسنس‌های معتبر</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_Box_License')">ثبت سفارش</button>
                 </div>
@@ -688,8 +648,8 @@
                 <div class="card">
                     <div>
                         <div class="card-icon">💳</div>
-                        <h3>خرید کردیت (Credit)</h3>
-                        <p>شارژ و تامین اعتبار انواع ابزارها و نرم‌افزارها</p>
+                        <h3>خرید کردیت</h3>
+                        <p>شارژ ابزارها</p>
                     </div>
                     <button class="btn btn-secondary" onclick="openTelegram('srv_Credit')">ثبت سفارش</button>
                 </div>
@@ -699,82 +659,64 @@
         <!-- Section 2: Standard VPN Plans -->
         <section id="vpn">
             <div class="section-header">
-                <h2>🚀 اشتراک‌های اینترنت و VPN</h2>
-                <p>سرویس‌های اختصاصی با سرورهای قدرتمند و پایداری بالا</p>
+                <h2>🚀 اشتراک‌های VPN</h2>
+                <p>سرورهای قدرتمند و پایداری بالا</p>
             </div>
 
             <div class="grid">
                 <div class="card">
                     <div>
-                        <h3>اشتراک ۱۰ گیگ</h3>
+                        <h3>۱۰ گیگ</h3>
                         <div class="card-price">۶۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('10GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('10GB')">خرید</button>
                 </div>
 
                 <div class="card" style="border-color: var(--border-blue);">
-                    <div class="card-badge">پیشنهاد ویژه</div>
+                    <div class="card-badge">ویژه</div>
                     <div>
-                        <h3>اشتراک ۲۰ گیگ</h3>
+                        <h3>۲۰ گیگ</h3>
                         <div class="card-price">۹۲,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('20GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('20GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>اشتراک ۳۰ گیگ</h3>
+                        <h3>۳۰ گیگ</h3>
                         <div class="card-price">۱۳۸,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('30GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('30GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>اشتراک ۴۰ گیگ</h3>
+                        <h3>۴۰ گیگ</h3>
                         <div class="card-price">۱۸۴,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('40GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('40GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>اشتراک ۵۰ گیگ</h3>
+                        <h3>۵۰ گیگ</h3>
                         <div class="card-price">۲۳۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('50GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('50GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>اشتراک ۶۰ گیگ</h3>
+                        <h3>۶۰ گیگ</h3>
                         <div class="card-price">۲۷۶,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('60GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <h3>اشتراک ۷۰ گیگ</h3>
-                        <div class="card-price">۳۲۲,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('70GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <h3>اشتراک ۸۰ گیگ</h3>
-                        <div class="card-price">۳۶۸,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('80GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('60GB')">خرید</button>
                 </div>
             </div>
         </section>
@@ -782,147 +724,102 @@
         <!-- Section 3: Dedicated & Economic Plans -->
         <section id="dedicated">
             <div class="section-header">
-                <h2>💎 سرویس‌های اختصاصی و 🌿 مود اقتصادی</h2>
-                <p>سرورهای فوق‌العاده سریع VIP و گزینه‌های به‌صرفه و اقتصادی</p>
+                <h2>💎 اختصاصی و 🌿 اقتصادی</h2>
+                <p>سرورهای VIP و اقتصادی</p>
             </div>
 
             <div class="grid">
                 <div class="card" style="border-color: rgba(16, 217, 155, 0.4);">
-                    <div class="card-badge card-badge-econ">🌿 مود اقتصادی</div>
+                    <div class="card-badge card-badge-econ">🌿 اقتصادی</div>
                     <div>
-                        <div class="card-icon">💡</div>
-                        <h3>اقتصادی ۳۰ گیگ</h3>
+                        <h3>۳۰ گیگ</h3>
                         <div class="card-price card-price-econ">۹۵,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه - مقرون به صرفه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-econ" onclick="openTelegram('Eco30GB')">خرید اقتصادی</button>
+                    <button class="btn btn-econ" onclick="openTelegram('Eco30GB')">خرید</button>
                 </div>
 
                 <div class="card" style="border-color: rgba(16, 217, 155, 0.4);">
-                    <div class="card-badge card-badge-econ">🌿 مود اقتصادی</div>
+                    <div class="card-badge card-badge-econ">🌿 اقتصادی</div>
                     <div>
-                        <div class="card-icon">🍀</div>
-                        <h3>اقتصادی ۶۰ گیگ</h3>
+                        <h3>۶۰ گیگ</h3>
                         <div class="card-price card-price-econ">۱۷۵,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۶۰ روزه - محبوب</div>
+                        <div class="card-sub">۶۰ روزه</div>
                     </div>
-                    <button class="btn btn-econ" onclick="openTelegram('Eco60GB')">خرید اقتصادی</button>
+                    <button class="btn btn-econ" onclick="openTelegram('Eco60GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <div class="card-icon">⚡</div>
-                        <h3>۲۰ گیگ اختصاصی</h3>
+                        <h3>۲۰G اختصاصی</h3>
                         <div class="card-price">۱۲۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated20GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('Dedicated20GB')">خرید</button>
                 </div>
 
                 <div class="card">
                     <div>
-                        <div class="card-icon">🔥</div>
-                        <h3>۵۰ گیگ اختصاصی</h3>
+                        <h3>۵۰G اختصاصی</h3>
                         <div class="card-price">۲۹۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
+                        <div class="card-sub">۳۰ روزه</div>
                     </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated50GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-icon">🚀</div>
-                        <h3>۶۰ گیگ اختصاصی</h3>
-                        <div class="card-price">۳۴۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated60GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-icon">💎</div>
-                        <h3>۱۰۰ گیگ اختصاصی</h3>
-                        <div class="card-price">۵۵۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated100GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-icon">👑</div>
-                        <h3>۱۵۰ گیگ اختصاصی</h3>
-                        <div class="card-price">۷۸۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated150GB')">خرید سرویس</button>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="card-icon">🏆</div>
-                        <h3>۵۰۰ گیگ اختصاصی</h3>
-                        <div class="card-price">۲,۴۵۰,۰۰۰ تومان</div>
-                        <div class="card-sub">اعتبار ۳۰ روزه</div>
-                    </div>
-                    <button class="btn btn-primary" onclick="openTelegram('Dedicated500GB')">خرید سرویس</button>
+                    <button class="btn btn-primary" onclick="openTelegram('Dedicated50GB')">خرید</button>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: Connection Guide (ℹ️ راهنمای اتصال) -->
+        <!-- Section 4: Connection Guide -->
         <section id="guide">
             <div class="section-header">
-                <h2>ℹ️ راهنمای اتصال و دانلود نرم‌افزارها</h2>
-                <p>برنامه‌های موردنیاز برای سیستم‌عامل‌های مختلف</p>
+                <h2>ℹ️ راهنمای اتصال</h2>
+                <p>برنامه‌های موردنیاز سیستم‌عامل‌ها</p>
             </div>
 
             <div class="help-grid">
                 <div class="help-card">
                     <h4>🤖 اندروید</h4>
-                    <p>استفاده از برنامه‌های v2rayNG یا MahsaNG</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_android')">آموزش اندروید</button>
+                    <p>v2rayNG / MahsaNG</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_android')">آموزش</button>
                 </div>
                 <div class="help-card">
-                    <h4>🍎 آیفون (iOS)</h4>
-                    <p>استفاده از برنامه‌های Streisand یا V2Box</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_ios')">آموزش آیفون</button>
+                    <h4>🍎 آیفون</h4>
+                    <p>Streisand / V2Box</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_ios')">آموزش</button>
                 </div>
                 <div class="help-card">
                     <h4>💻 ویندوز</h4>
-                    <p>استفاده از نرم‌افزار v2rayN یا v2rayN-PRO</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_windows')">آموزش ویندوز</button>
+                    <p>v2rayN</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_windows')">آموزش</button>
                 </div>
                 <div class="help-card">
                     <h4>🍏 مک‌بوک</h4>
-                    <p>استفاده از نرم‌افزارهای V2Box یا Sing-Box</p>
-                    <button class="btn btn-secondary" onclick="openTelegram('guide_mac')">آموزش مک</button>
+                    <p>V2Box / Sing-Box</p>
+                    <button class="btn btn-secondary" onclick="openTelegram('guide_mac')">آموزش</button>
                 </div>
             </div>
         </section>
 
-        <!-- Section 5: About Us (درباره ما) -->
+        <!-- Section 5: About Us -->
         <section id="about">
             <div class="section-header">
                 <h2>🌐 درباره AMINI NETWORK</h2>
-                <p>تضمین کیفیت، امنیت بالا و اتصال بدون قطعی</p>
             </div>
 
             <div class="about-box">
-                <p>مجموعه <strong>AMINI NETWORK</strong> با هدف ارائه جدیدترین راهکارهای تخصصی نرم‌افزار موبایل، خدمات شبکه و اینترنت اختصاصی بدون محدودیت فعالیت می‌کند. ما با به‌کارگیری سرورهای قدرتمند ابری، پروتکل‌های رمزنگاری پیشرفته و پشتیبانی آنلاین ۲۴ ساعته، پایداری بالا و تجربه‌ای فوق‌العاده برای کاربران تضمین می‌کنیم.</p>
+                <p>مجموعه <strong>AMINI NETWORK</strong> ارائه دهنده خدمات تخصصی نرم‌افزار موبایل، خدمات شبکه و اینترنت اختصاصی بدون محدودیت با سرورهای ابری قدرتمند و پشتیبانی ۲۴ ساعته می‌باشد.</p>
                 <div class="about-stats">
                     <div class="stat-item">
                         <h3>۹۹.۹٪</h3>
-                        <span>آپتایم سرورها</span>
+                        <span>آپتایم</span>
                     </div>
                     <div class="stat-item">
                         <h3>۲۴/۷</h3>
-                        <span>پشتیبانی آنلاین</span>
+                        <span>پشتیبانی</span>
                     </div>
                     <div class="stat-item">
                         <h3>+۵,۰۰۰</h3>
-                        <span>کاربر فعال</span>
+                        <span>کاربر</span>
                     </div>
                 </div>
             </div>
@@ -932,21 +829,16 @@
         <section>
             <div class="section-header">
                 <h2>❓ سوالات متداول</h2>
-                <p>پاسخ به ابهامات رایج شما قبل از ثبت سفارش</p>
             </div>
 
             <div class="faq-wrapper">
                 <details>
-                    <summary>فرآیند ارسال سفارشات به چه صورت است؟</summary>
-                    <p>پس از کلیک بر روی سرویس، هدایت شده و پیام سفارش مستقیماً در ربات تلگرام ثبت می‌شود.</p>
+                    <summary>نحوه ثبت سفارش چگونه است؟</summary>
+                    <p>با کلیک روی هر سرویس مستقیماً به ربات تلگرام منتقل می‌شوید.</p>
                 </details>
                 <details>
-                    <summary>سرویس‌های نرم‌افزاری چقدر زمان می‌برند؟</summary>
-                    <p>اغلب سرویس‌ها مانند FRP به دلیل پردازش فوری، بین ۱۰ الی ۳۰ دقیقه زمان نیاز خواهند داشت.</p>
-                </details>
-                <details>
-                    <summary>آیا سرویس‌های اختصاصی و VPN ضمانت دارند؟</summary>
-                    <p>بله، تمامی سرورها با کیفیت اختصاصی تنظیم شده و پشتیبانی آنلاین در طول اعتبار همراه شماست.</p>
+                    <summary>زمان تحویل سرویس‌های نرم‌افزاری؟</summary>
+                    <p>اغلب سرویس‌ها بین ۱۰ الی ۳۰ دقیقه زمان نیاز دارند.</p>
                 </details>
             </div>
         </section>
@@ -954,8 +846,8 @@
         <!-- CTA Box -->
         <section>
             <div class="cta-box">
-                <h2>نیاز به مشاوره یا ثبت سفارش دارید؟</h2>
-                <p>از طریق ربات هوشمند تلگرام می‌توانید کلیه سرویس‌ها را مدیریت، شارژ و خریداری کنید.</p>
+                <h2>نیاز به مشاوره دارید؟</h2>
+                <p>از طریق ربات تلگرام با ما در ارتباط باشید.</p>
                 <button class="btn btn-primary" onclick="openTelegram('')">ورود به ربات تلگرام</button>
             </div>
         </section>
@@ -964,11 +856,11 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            &copy; 2026 AMINI NETWORK — تمامی حقوق مادی و معنوی محفوظ است.
+            &copy; 2026 AMINI NETWORK
         </div>
     </footer>
 
-    <!-- Telegram Link Handler Script -->
+    <!-- Script -->
     <script>
         function openTelegram(param) {
             const botUsername = "arkanvpnn_bot";

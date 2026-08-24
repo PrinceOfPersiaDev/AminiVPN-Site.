@@ -714,32 +714,31 @@
             </div>
         </div>
 
-        <!-- Chapter: Dedicated Direct Support -->
-        <div id="support-chapter" class="chapter-box">
-            <div class="chapter-header">
-                <h3>📞 مرکز پشتیبانی و ارتباط مستقیم</h3>
-                <button class="close-btn" onclick="toggleChapter('support-chapter')">✕ بستن</button>
-            </div>
-            <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">در صورت بروز هرگونه مشکل یا نیاز به راهنمایی از راه‌های زیر با ما در تماس باشید:</p>
-            <div class="contact-list">
-                <div class="contact-item">
-                    <h4>👨‍💻 پشتیبانی ادمین</h4>
-                    <p>پاسخگویی سریع به سوالات و سفارشات</p>
-                    <button class="btn btn-primary" onclick="window.open('https://t.me/Arkan_Amini', '_blank')">پیام به ادمین (@AMINIVPN_SUPPORT)</button>
-                </div>
-                <div class="contact-item">
-                    <h4>🤖 ربات هوشمند تلگرام</h4>
-                    <p>مدیریت سرویس‌ها و خرید آنلاین</p>
-                    <button class="btn btn-purple" onclick="openTelegram('')">ورود به ربات (@arkanvpnn_bot)</button>
-                </div>
-                <div class="contact-item">
-                    <h4>📢 کانال رسمی اطلاع‌رسانی</h4>
-                    <p>دریافت اخبار سرورها و تخفیف‌ها</p>
-                    <button class="btn btn-secondary" onclick="window.open('https://t.me/Amini_net', '_blank')">عضویت در کانال (@AMINI_NETWORK)</button>
-                </div>
-            </div>
+      <!-- Chapter: Dedicated Direct Support -->
+<div id="support-chapter" class="chapter-box">
+    <div class="chapter-header">
+        <h3>📞 مرکز پشتیبانی و ارتباط مستقیم</h3>
+        <button class="close-btn" onclick="toggleChapter('support-chapter')">✕ بستن</button>
+    </div>
+    <p style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">در صورت بروز هرگونه مشکل یا نیاز به راهنمایی از راه‌های زیر با ما در تماس باشید:</p>
+    <div class="contact-list">
+        <div class="contact-item">
+            <h4>👨‍💻 پشتیبانی ادمین</h4>
+            <p>پاسخگویی سریع به سوالات و سفارشات</p>
+            <button class="btn btn-primary" onclick="openTgLink('Arkan_Amini')">پیام به ادمین (@Arkan_Amini)</button>
         </div>
-
+        <div class="contact-item">
+            <h4>🤖 ربات هوشمند تلگرام</h4>
+            <p>مدیریت سرویس‌ها و خرید آنلاین</p>
+            <button class="btn btn-purple" onclick="openTelegram('')">ورود به ربات (@arkanvpnn_bot)</button>
+        </div>
+        <div class="contact-item">
+            <h4>📢 کانال رسمی اطلاع‌رسانی</h4>
+            <p>دریافت اخبار سرورها و تخفیف‌ها</p>
+            <button class="btn btn-secondary" onclick="openTgLink('Amini_net')">عضویت در کانال (@Amini_net)</button>
+        </div>
+    </div>
+</div>
         <!-- Action Banners -->
         <div class="action-banners">
             <div class="banner-box">
@@ -1098,6 +1097,34 @@
                 window.location.href = webUrl;
             }, 1500);
         }
-    </script>
+    </script>function openTgLink(username) {
+    // حذف علامتهای احتمالی @ از ابتدا
+    const cleanUsername = username.replace(/^@/, '');
+
+    const appUrl = `tg://resolve?domain=${cleanUsername}`;
+    const webUrl = `https://t.me/${cleanUsername}`;
+
+    let isPageHidden = false;
+
+    // تشخیص خارج شدن کاربر از مرورگر (یعنی اپ تلگرام باز شده است)
+    const handleVisibilityChange = () => {
+        if (document.hidden) {
+            isPageHidden = true;
+        }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // ۱. تلاش برای باز کردن مستقیم در نرم‌افزار تلگرام
+    window.location.href = appUrl;
+
+    // ۲. اگر تلگرام باز نشد و کاربر هنوز روی صفحه وب است، باز کردن لینک وب
+    setTimeout(() => {
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+        if (!isPageHidden) {
+            window.open(webUrl, '_blank');
+        }
+    }, 2000);
+}
 </body>
 </html>

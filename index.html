@@ -714,7 +714,7 @@
             </div>
         </div>
 
-      <!-- Chapter: Dedicated Direct Support -->
+   <!-- Dynamic Support Chapter -->
 <div id="support-chapter" class="chapter-box">
     <div class="chapter-header">
         <h3>📞 مرکز پشتیبانی و ارتباط مستقیم</h3>
@@ -725,17 +725,17 @@
         <div class="contact-item">
             <h4>👨‍💻 پشتیبانی ادمین</h4>
             <p>پاسخگویی سریع به سوالات و سفارشات</p>
-            <button class="btn btn-primary" onclick="openTgLink('Arkan_Amini')">پیام به ادمین (@Arkan_Amini)</button>
+            <button class="btn btn-primary" onclick="openTgLink('AMINIVPN_SUPPORT')">پیام به ادمین (@AMINIVPN_SUPPORT)</button>
         </div>
         <div class="contact-item">
             <h4>🤖 ربات هوشمند تلگرام</h4>
             <p>مدیریت سرویس‌ها و خرید آنلاین</p>
-            <button class="btn btn-purple" onclick="openTelegram('')">ورود به ربات (@arkanvpnn_bot)</button>
+            <button class="btn btn-purple" onclick="openTgLink('arkanvpnn_bot')">ورود به ربات (@arkanvpnn_bot)</button>
         </div>
         <div class="contact-item">
             <h4>📢 کانال رسمی اطلاع‌رسانی</h4>
             <p>دریافت اخبار سرورها و تخفیف‌ها</p>
-            <button class="btn btn-secondary" onclick="openTgLink('Amini_net')">عضویت در کانال (@Amini_net)</button>
+            <button class="btn btn-secondary" onclick="openTgLink('AMINI_NETWORK')">عضویت در کانال (@AMINI_NETWORK)</button>
         </div>
     </div>
 </div>
@@ -1097,34 +1097,6 @@
                 window.location.href = webUrl;
             }, 1500);
         }
-    </script>function openTgLink(username) {
-    // حذف علامتهای احتمالی @ از ابتدا
-    const cleanUsername = username.replace(/^@/, '');
-
-    const appUrl = `tg://resolve?domain=${cleanUsername}`;
-    const webUrl = `https://t.me/${cleanUsername}`;
-
-    let isPageHidden = false;
-
-    // تشخیص خارج شدن کاربر از مرورگر (یعنی اپ تلگرام باز شده است)
-    const handleVisibilityChange = () => {
-        if (document.hidden) {
-            isPageHidden = true;
-        }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // ۱. تلاش برای باز کردن مستقیم در نرم‌افزار تلگرام
-    window.location.href = appUrl;
-
-    // ۲. اگر تلگرام باز نشد و کاربر هنوز روی صفحه وب است، باز کردن لینک وب
-    setTimeout(() => {
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-        if (!isPageHidden) {
-            window.open(webUrl, '_blank');
-        }
-    }, 2000);
-}
+    </script>
 </body>
 </html>

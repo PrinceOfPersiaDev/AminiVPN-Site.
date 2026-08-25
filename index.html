@@ -1080,7 +1080,7 @@
         </div>
     </footer>
 
- <!-- Interactive Script Corrected -->
+<!-- Interactive Script Corrected -->
     <script>
         function toggleChapter(id) {
             const box = document.getElementById(id);
@@ -1097,14 +1097,31 @@
 
         function openTelegram(param) {
             const botUsername = "arkanvpnn_bot";
-            const targetUrl = param ? `https://t.me/${botUsername}?start=${param}` : `https://t.me/${botUsername}`;
-            window.open(targetUrl, '_blank');
+            const startParam = param ? `?start=${param}` : "";
+            const startParamTg = param ? `&start=${param}` : "";
+
+            const appUrl = `tg://resolve?domain=${botUsername}${startParamTg}`;
+            const webUrl = `https://t.me/${botUsername}${startParam}`;
+
+            // هدایت مستقیم به اپلیکیشن تلگرام (بدون نیاز به فیلترشکن در صورت نصب بودن برنامه)
+            window.location.href = appUrl;
+
+            // باز کردن نسخه وب در تب جدید در صورت عدم انتقال خودکار
+            setTimeout(function () {
+                window.open(webUrl, '_blank');
+            }, 1200);
         }
 
         function openTgLink(username) {
             const cleanUsername = username.replace(/^@/, '');
-            const targetUrl = `https://t.me/${cleanUsername}`;
-            window.open(targetUrl, '_blank');
+            const appUrl = `tg://resolve?domain=${cleanUsername}`;
+            const webUrl = `https://t.me/${cleanUsername}`;
+
+            window.location.href = appUrl;
+
+            setTimeout(function () {
+                window.open(webUrl, '_blank');
+            }, 1200);
         }
     </script>
 </body>

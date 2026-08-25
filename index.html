@@ -1080,7 +1080,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Script -->
+ <!-- Interactive Script Corrected -->
     <script>
         function toggleChapter(id) {
             const box = document.getElementById(id);
@@ -1097,23 +1097,14 @@
 
         function openTelegram(param) {
             const botUsername = "arkanvpnn_bot";
-            const startParam = param ? `?start=${param}` : "";
-            const startParamTg = param ? `&start=${param}` : "";
-
-            const appUrl = `tg://resolve?domain=${botUsername}${startParamTg}`;
-            const webUrl = `https://t.me/${botUsername}${startParam}`;
-
-            window.location.href = appUrl;
-
-            setTimeout(function () {
-                window.location.href = webUrl;
-            }, 1500);
+            const targetUrl = param ? `https://t.me/${botUsername}?start=${param}` : `https://t.me/${botUsername}`;
+            window.open(targetUrl, '_blank');
         }
 
         function openTgLink(username) {
             const cleanUsername = username.replace(/^@/, '');
-            const webUrl = `https://t.me/${cleanUsername}`;
-            window.open(webUrl, '_blank');
+            const targetUrl = `https://t.me/${cleanUsername}`;
+            window.open(targetUrl, '_blank');
         }
     </script>
 </body>
